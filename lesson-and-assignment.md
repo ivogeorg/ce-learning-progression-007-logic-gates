@@ -26,7 +26,7 @@ This is lesson and assignment 007 for the Spring 2020 installment of the CPE 104
 
 **TODO:** Overview of both lesson and assignment.
 
-### Section 1: AND gate from NPN transistors
+### Section 1: AND, OR, and NOT gates from NPN transistors
 
 **TODO**
 
@@ -34,27 +34,27 @@ This is lesson and assignment 007 for the Spring 2020 installment of the CPE 104
 
 **TODO**
 
-### Section 3: OR gate from NPN transistors
+### Section 3: Logic gate ICs
 
 **TODO**
 
-### Section 4: NOT gate from a NPN transistor
-
-**TODO**
-
-### Section 5: Logic gate ICs
-
-**TODO**
-
-### Section 6: Combinational logic
+### Section 4: Combinational logic
 
 **TODO:** Functional sets (???) and building the other gates with them.
 
-### Section 7: Truth table on the micro:bit
+### Section 5: Truth table on the micro:bit
 
 **TODO**
 
-### Section 8: Modulo-5 counter
+### Section 6: Bi-directional 3-bit binary ripple counter (asynchronous)
+
+**TODO**
+
+### Section 7: Bi-directional synchronous 3-bit binary counter
+
+**TODO**
+
+### Section 8: Bi-directional modulo-5 counter
 
 **TODO:** Introduce combinational circuits!
 
