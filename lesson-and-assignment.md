@@ -1,4 +1,4 @@
-# CPE 1040 - Spring 2020
+# CPE 1040 - Spring 2020 (IN PROGRESS)
 
 Author: Ivo Georgiev, PhD  
 Last updated: 2020-03-18   
@@ -16,13 +16,25 @@ This is lesson and assignment 007 for the Spring 2020 installment of the CPE 104
 
 ## Take-home lab kit
 
-**TODO**
+The take-home lab kit is meant to provide continuity of our lab projects across the transition to online instruction. Please, read the [BOM, guide, and care document](https://docs.google.com/document/d/18IDsrQlZY_QkmWG7FFtGqd9M2S1wL8ShJrD00aHwBwQ/edit?usp=sharing) and use it as a reference throughout the lesson and assignment.
 
 ## Learning how to learn
 
 **TODO**
 
-## Lesson & Assignment 007: Logic gates
+The human mind is a very fine machine with amazing capabilities. And like any complex mechanism, it takes study to learn to use it effectively. This standalone section will contain practical information and advice for learning how to learn.
+
+##### Learning How to Learn 02
+
+1. Section title.    
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt augue interdum velit euismod in pellentesque massa. Interdum varius sit amet mattis vulputate enim. Quam viverra orci sagittis eu volutpat odio facilisis mauris sit. Commodo quis imperdiet massa tincidunt nunc. In tellus integer feugiat scelerisque varius. Arcu dictum varius duis at consectetur lorem donec. Turpis egestas integer eget aliquet nibh. Velit sed ullamcorper morbi tincidunt. Faucibus ornare suspendisse sed nisi lacus. Platea dictumst vestibulum rhoncus est pellentesque elit. Non sodales neque sodales ut etiam sit amet nisl purus. Ullamcorper sit amet risus nullam eget felis. Arcu cursus vitae congue mauris rhoncus. Sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis. Sed augue lacus viverra vitae congue eu. Sit amet risus nullam eget. Porta nibh venenatis cras sed felis eget velit aliquet sagittis. 
+   
+   TO DO: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisi est sit amet facilisis magna. Ante metus dictum at tempor. In dictum non consectetur a erat nam at lectus urna. Quis vel eros donec ac odio tempor orci dapibus ultrices. Quis enim lobortis scelerisque fermentum dui. Dolor morbi non arcu risus quis varius quam quisque. Scelerisque eu ultrices vitae auctor eu augue ut lectus. Massa placerat duis ultricies lacus sed turpis tincidunt. Orci dapibus ultrices in iaculis nunc sed augue lacus viverra. Sapien faucibus et molestie ac feugiat. Risus nec feugiat in fermentum posuere urna nec tincidunt praesent. Venenatis lectus magna fringilla urna porttitor. Porttitor lacus luctus accumsan tortor posuere ac. Eget dolor morbi non arcu risus quis varius quam quisque. Id velit ut tortor pretium viverra suspendisse potenti nullam ac.
+   
+2. Section title.    
+
+
+## Lesson & Assignment 007: Logic gates (IN PROGRESS)
 
 **TODO:** Overview of both lesson and assignment.
 
@@ -54,7 +66,7 @@ This is lesson and assignment 007 for the Spring 2020 installment of the CPE 104
 
 **TODO**
 
-### Section 8: Bi-directional modulo-5 counter
+### Section 8: Bi-directional synchronous modulo counters
 
 **TODO:** Introduce combinational circuits!
 
