@@ -114,6 +114,14 @@ The human mind is a very fine machine with amazing capabilities. And like any co
 1. NPN transistor [2N3904 datasheet](https://www.sparkfun.com/datasheets/Components/2N3904.pdf)
 2. PNP Transistor [2N3906 datasheet](https://www.sparkfun.com/datasheets/Components/2N3906.pdf)
 
+### Logic gates
+
+**TODO**
+
+#### Logic gate datasheets
+
+**TODO**
+
 ### Flip-flops
 1. Very in-depth yet accessible Wikipedia article on [flip-flops](https://en.wikipedia.org/wiki/Flip-flop_(electronics))
 2. Video of [flip-flop circuit build & operation](https://www.youtube.com/watch?v=IykOrxVcdyg)
