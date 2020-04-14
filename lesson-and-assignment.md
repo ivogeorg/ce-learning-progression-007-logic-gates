@@ -26,12 +26,12 @@ The human mind is a very fine machine with amazing capabilities. And like any co
 
 ##### Learning How to Learn 02
 
-1. Section title.    
+1. The two-minute principle.    
    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt augue interdum velit euismod in pellentesque massa. Interdum varius sit amet mattis vulputate enim. Quam viverra orci sagittis eu volutpat odio facilisis mauris sit. Commodo quis imperdiet massa tincidunt nunc. In tellus integer feugiat scelerisque varius. Arcu dictum varius duis at consectetur lorem donec. Turpis egestas integer eget aliquet nibh. Velit sed ullamcorper morbi tincidunt. Faucibus ornare suspendisse sed nisi lacus. Platea dictumst vestibulum rhoncus est pellentesque elit. Non sodales neque sodales ut etiam sit amet nisl purus. Ullamcorper sit amet risus nullam eget felis. Arcu cursus vitae congue mauris rhoncus. Sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis. Sed augue lacus viverra vitae congue eu. Sit amet risus nullam eget. Porta nibh venenatis cras sed felis eget velit aliquet sagittis. 
    
    TO DO: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisi est sit amet facilisis magna. Ante metus dictum at tempor. In dictum non consectetur a erat nam at lectus urna. Quis vel eros donec ac odio tempor orci dapibus ultrices. Quis enim lobortis scelerisque fermentum dui. Dolor morbi non arcu risus quis varius quam quisque. Scelerisque eu ultrices vitae auctor eu augue ut lectus. Massa placerat duis ultricies lacus sed turpis tincidunt. Orci dapibus ultrices in iaculis nunc sed augue lacus viverra. Sapien faucibus et molestie ac feugiat. Risus nec feugiat in fermentum posuere urna nec tincidunt praesent. Venenatis lectus magna fringilla urna porttitor. Porttitor lacus luctus accumsan tortor posuere ac. Eget dolor morbi non arcu risus quis varius quam quisque. Id velit ut tortor pretium viverra suspendisse potenti nullam ac.
    
-2. Section title.    
+2. Mindset: fixed vs growth.    
 
 
 ## Lesson & Assignment 007: Logic gates (IN PROGRESS)
