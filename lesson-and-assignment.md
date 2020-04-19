@@ -1,7 +1,7 @@
 # CPE 1040 - Spring 2020 (IN PROGRESS)
 
 Author: Ivo Georgiev, PhD  
-Last updated: 2020-03-18   
+Last updated: 2020-04-17   
 Code: 9acff7cc344309ac25976869a50535751d4b970d      
 
 ![alt text](images/CPE-Asst6-Modulo-Ctr.jpg "Final circuit for CPE 1040 Asst 6")
@@ -24,7 +24,7 @@ The take-home lab kit is meant to provide continuity of our lab projects across 
 
 The human mind is a very fine machine with amazing capabilities. And like any complex mechanism, it takes study to learn to use it effectively. This standalone section will contain practical information and advice for learning how to learn.
 
-##### Learning How to Learn 02
+##### Learning How to Learn 03
 
 1. The two-minute principle.    
    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt augue interdum velit euismod in pellentesque massa. Interdum varius sit amet mattis vulputate enim. Quam viverra orci sagittis eu volutpat odio facilisis mauris sit. Commodo quis imperdiet massa tincidunt nunc. In tellus integer feugiat scelerisque varius. Arcu dictum varius duis at consectetur lorem donec. Turpis egestas integer eget aliquet nibh. Velit sed ullamcorper morbi tincidunt. Faucibus ornare suspendisse sed nisi lacus. Platea dictumst vestibulum rhoncus est pellentesque elit. Non sodales neque sodales ut etiam sit amet nisl purus. Ullamcorper sit amet risus nullam eget felis. Arcu cursus vitae congue mauris rhoncus. Sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis. Sed augue lacus viverra vitae congue eu. Sit amet risus nullam eget. Porta nibh venenatis cras sed felis eget velit aliquet sagittis. 
