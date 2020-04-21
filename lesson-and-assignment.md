@@ -1,7 +1,7 @@
 # CPE 1040 - Spring 2020 (IN PROGRESS)
 
 Author: Ivo Georgiev, PhD  
-Last updated: 2020-04-17   
+Last updated: 2020-04-20   
 Code: 9acff7cc344309ac25976869a50535751d4b970d      
 
 ![alt text](images/CPE-Asst6-Modulo-Ctr.jpg "Final circuit for CPE 1040 Asst 6")
@@ -20,19 +20,19 @@ The take-home lab kit is meant to provide continuity of our lab projects across 
 
 ## Learning how to learn
 
-**TODO**
-
 The human mind is a very fine machine with amazing capabilities. And like any complex mechanism, it takes study to learn to use it effectively. This standalone section will contain practical information and advice for learning how to learn.
 
 ##### Learning How to Learn 03
 
 1. The two-minute principle.    
-   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt augue interdum velit euismod in pellentesque massa. Interdum varius sit amet mattis vulputate enim. Quam viverra orci sagittis eu volutpat odio facilisis mauris sit. Commodo quis imperdiet massa tincidunt nunc. In tellus integer feugiat scelerisque varius. Arcu dictum varius duis at consectetur lorem donec. Turpis egestas integer eget aliquet nibh. Velit sed ullamcorper morbi tincidunt. Faucibus ornare suspendisse sed nisi lacus. Platea dictumst vestibulum rhoncus est pellentesque elit. Non sodales neque sodales ut etiam sit amet nisl purus. Ullamcorper sit amet risus nullam eget felis. Arcu cursus vitae congue mauris rhoncus. Sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis. Sed augue lacus viverra vitae congue eu. Sit amet risus nullam eget. Porta nibh venenatis cras sed felis eget velit aliquet sagittis. 
+   The _two-minute principle_ is an extremely easy and useful technique that requires no setup and no special circumstances. How often have you felt _stuck_ in indecision about how to proceed or even how to start, say, a piece of work, a homework, an exam review, or any other thing that you know you have to do but you feel reluctant to start or continue? And how often, for one reason or another, you have been startled out of this frozen state, only to find that you have seamlessly slid into the activity without noticing, and that all resistance has disappeared? In a way, you only had to start, to get yourself into a productive state of _flow_ instead?   
    
-   TO DO: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisi est sit amet facilisis magna. Ante metus dictum at tempor. In dictum non consectetur a erat nam at lectus urna. Quis vel eros donec ac odio tempor orci dapibus ultrices. Quis enim lobortis scelerisque fermentum dui. Dolor morbi non arcu risus quis varius quam quisque. Scelerisque eu ultrices vitae auctor eu augue ut lectus. Massa placerat duis ultricies lacus sed turpis tincidunt. Orci dapibus ultrices in iaculis nunc sed augue lacus viverra. Sapien faucibus et molestie ac feugiat. Risus nec feugiat in fermentum posuere urna nec tincidunt praesent. Venenatis lectus magna fringilla urna porttitor. Porttitor lacus luctus accumsan tortor posuere ac. Eget dolor morbi non arcu risus quis varius quam quisque. Id velit ut tortor pretium viverra suspendisse potenti nullam ac.
+   TO DO: The two-minute principle is the simplest technique to do this at will. And that's all it is: one way or another you focus on what you have to do _for 2 minutes_ before you look up and reassess; more often than not, relieved of the pressure of having to _slog through_ "all this work that has piled up", it has jumped into the limited task at hand and bit into it. Chances are that in 2 minutes you will be in a completely different state of mind, able to tick tasks off without any negative emotions, but even with _excitement for every completed piece of work_.    
    
 2. Mindset: fixed vs growth.    
-
+   The term _mindset_ refers to the usual way you react to mental challenges. If you can't do something successfully, do you get frustrated and give up, or do you get frustrated and keep banging at it and try new things? A lot of research literature has accumulated that shows that the difference in our reactions to percieved adversity and our reflexive attribution of the difficulties to either _intrinsic ineptitude_ or _not enough training yet_ divide us into two fundamentally different behavioral groups. The former attribution is associated with the so called _fixed mindset_ and the latter with the so called _growth mindset_.
+   
+   TO DO: The worst thing you can do when you read the above paragraph is to conclude that you have the fixed mindset and that's that. The whole point of talking about mindsets is to convince you to try the other, the growth mindset, and realize that it takes no more effort than the other. It's just a matter of decision. Just like you have no problem deciding between orange chicken and mushrooms with greens at a Panda Express, you can choose to withhold any habitual thoughts of personal inadequacy, and all the fear and pain that such thoughts bring along, and just give it a shot: "I don't understand this, but I will give it some time, look at it from different angles, ask others to see how they think about it, and reassess later". At every moment when you are faced with something new - which in college happens regularly - stay conscious about how you react at the first encounter: are you calm and keep your mind free of extraneous emotions, so you can start thinking about the new thing; or do you try to distance yourself from it and hope it will pass you by? The former is the fixed mindset. The latter is the growth mindset. It's your choice, really.
 
 ## Lesson & Assignment 007: Logic gates (IN PROGRESS)
 
