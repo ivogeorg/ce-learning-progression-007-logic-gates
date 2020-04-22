@@ -1,6 +1,6 @@
 # CPE 1040 - Spring 2020
 
-## Errata for Assignment 6
+## Errata for Lesson & Assignment 007
 
 ### Item n.m
 
