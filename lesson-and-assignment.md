@@ -113,10 +113,12 @@ This is a lesson and assignment on _logic gates_. Logic gates are circuits which
 - next to each other with 2 inputs: is there an output (function) that is missing?
 - more than two inputs
 - minimization and a glimpse of Karnaugh maps
+- multiplexors are a major element of combinational control ciruits.
 
 #### 2. Apply
 - write a logic verifier program for the micro:bit
 - it should identify and name the logic function of a gate IC or combination
+- drive the multiplexor of the XOR/XNOR gate and verify through operation
 
 #### 3. Present
 - anwers to questions
@@ -125,19 +127,50 @@ This is a lesson and assignment on _logic gates_. Logic gates are circuits which
 
 ### Section 6: Bi-directional 3-bit binary ripple counter (asynchronous)
 
-**TODO:** Multiplexors are a major element of combinational control ciruits.
+#### 1. Study
+- synchronous vs asynchronous
+- ripple & delays
+- down schematic, up schematic, derive control
+- different ways to build a multiplexer
 
-### Section 7: Bi-directional synchronous 3-bit binary counter
+#### 2. Apply
+- remove the MSB of the counter to free a converter channel
+- built a multiplexer from gates
+- drive the selector from the micro:bit
 
-**TODO**
+#### 3. Present
+- design writeup, including truth table
+- program source
+- video
+
+### Section 7: Bi-directional synchronous circuits
+
+#### 1. Study
+- pros and cons of synchronous and asynchronous (not just counters)
+- timing in ciruits (datasheets, levels of abstraction)
+
+#### 2. Apply
+- build a 3-bit synchronous up counter
+- build a 2-bit up/down multiplexed synchronous counter
+- build a 3-bit left/right shifter out of 3 D-flip-flops (control?)
+
+#### 3. Present
+- timing diagrams and schematics
+- programs
+- videos
 
 ### Section 8: Bi-directional synchronous modulo counters
 
-#### 5.1 Study
+#### 1. Study
+- encoding and decoding
+- binary numbers and control circuits
 
-**TODO**
+#### 2. Apply
+- 3-bit up/down mod-5 counter 
+- 3-bit up/down mod-6 counter
+- 3-bit up/down multiplexed mod-5/mod-6 counter
 
-#### 5.2 Apply
+**TODO:** How to overcome the converter channel constraint?
 
 1. Build a [_combinational circuit_](https://www.electronics-tutorials.ws/combination/comb_1.html) out of [_logic gate_](https://en.wikipedia.org/wiki/Logic_gate) [ICs](https://en.wikipedia.org/wiki/List_of_7400-series_integrated_circuits) (AND, OR, NOT, etc.) to drive one of the control signals to change your circuit from a mod-8 counter to a **mod-5 counter**:
    1. Design the signal necessary to force the counter to cycle back to `000` before it reaches `101`.
@@ -148,9 +181,10 @@ This is a lesson and assignment on _logic gates_. Logic gates are circuits which
 4. Commit to your repository as file `mod-5-clr.js`.
 5. Record a video showing mod-5 counter without external logic gates, and link to README with a brief explanation of your code.
 
-#### 5.3
-
-**TODO**
+#### 3. Present
+- diagrams, schematics, control circuit designs
+- programs
+- videos
 
 ## Resources
 
