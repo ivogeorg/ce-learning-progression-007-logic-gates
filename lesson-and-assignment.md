@@ -166,11 +166,12 @@ This is a lesson and assignment on _logic gates_. Logic gates are circuits which
 - binary numbers and control circuits
 
 #### 2. Apply
-- 3-bit up/down mod-5 counter 
-- 3-bit up/down mod-6 counter
-- 3-bit up/down multiplexed mod-5/mod-6 counter
+- 3-bit upmod-5 counter (local reset)
+- 3-bit down mod-6 counter (local reset)
+(- 3-bit circuit that cycles through the sequence 0-1-2-3-4-5-4-3-2-1-0-1-2-3-4-5-6-5-4-3-2-1-0-...)
+- if it can't fit, remove one flip-flop chip, and do 0-1-2-3-2-1-0-1-2-1-0-... (opens up a control signal from micro:bit)
 
-**TODO:** How to overcome the converter channel constraint?
+**TODO:** Can the last one fit on the long breadboard?
 
 1. Build a [_combinational circuit_](https://www.electronics-tutorials.ws/combination/comb_1.html) out of [_logic gate_](https://en.wikipedia.org/wiki/Logic_gate) [ICs](https://en.wikipedia.org/wiki/List_of_7400-series_integrated_circuits) (AND, OR, NOT, etc.) to drive one of the control signals to change your circuit from a mod-8 counter to a **mod-5 counter**:
    1. Design the signal necessary to force the counter to cycle back to `000` before it reaches `101`.
