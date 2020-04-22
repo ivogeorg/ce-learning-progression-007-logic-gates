@@ -1,7 +1,7 @@
 # CPE 1040 - Spring 2020 (IN PROGRESS)
 
 Author: Ivo Georgiev, PhD  
-Last updated: 2020-04-20   
+Last updated: 2020-04-22   
 Code: 9acff7cc344309ac25976869a50535751d4b970d      
 
 ![alt text](images/CPE-Asst6-Modulo-Ctr.jpg "Final circuit for CPE 1040 Asst 6")
@@ -36,39 +36,102 @@ The human mind is a very fine machine with amazing capabilities. And like any co
 
 ## Lesson & Assignment 007: Logic gates (IN PROGRESS)
 
-**TODO:** Overview of both lesson and assignment.
+This is a lesson and assignment on _logic gates_. Logic gates are circuits which apply logical functions on their inputs and output the result. Logic gates can have 1 or more inputs but usually have only 1 output. They are the building blocks of modern computational hardware, including arithmetic, logic, and control circuits. The logic gates themselves are built out of transistors.
 
 ### Section 1: AND, OR, and NOT gates from NPN transistors
 
-**TODO**
+#### 1. Study
+- Logic levels
+- Logical functions
+- Boolean algebra
+- Truth tables
+- Logic gates out of transistors (videos)
+
+#### 2. Apply
+- build NOT from 1 NPN transistor (R+LED load)
+- build AND from 2 NPN transistors (R+LED load)
+- build OR from 2 NPN transistors (R+LED load)
+- drive the base from the micro:bit
+
+#### 3. Present
+- videos of the circuits operating
 
 ### Section 2: Drive and read a gate with the micro:bit
 
-**TODO**
+#### 1. Study
+- where is the "output"
+- voltage at the output
+
+#### 2. Apply
+- measure the output voltage
+- feed back into micro:bit as input pin: (i) analog, and (ii) ditigal
+- display as 0 or 1 on LED matrix
+
+#### 3. Present
+- writeup on voltage levels
+- videos of the circuits operating
+- programs used
 
 ### Section 3: Logic gate ICs
 
-**TODO**
+#### 1. Study
+- reading the datasheets
+- how logic gates are actually built
+- correct placement and powering of the log gates
+- how much load can the logic gates drive
+
+#### 2. Apply
+- for each logic gate, exchange the NPN circuit from Seciton 2 with a corresponding IC gate
+- measure the voltage levels on both sides (3.3V and 5V)
+
+#### 3. Present
+- equivalent to previous: measurements and video
 
 ### Section 4: Combinational logic
 
-**TODO:** Functional sets (???) and building the other gates with them.
+#### 1. Study
+- another pass of Boolean algebra and truth tables
+- functional sets: OR+NOT, AND+NOT, NAND, NOR
+- combinational logic: vs sequential, propagation delay, logic minimization
+
+#### 2. Apply
+- compose combinational ciruits to build AND out of OR+NOT, OR out of AND+NOT
+- compose combinational ciruits to build AND, OR, and NOT out of NAND
+- compose combinational ciruits to build XOR out of NAND
+- drive with the micro:bit (input signals)
+- build direct and combinational next to each other and verify same output: (i) with an AND gate and an LED load, (ii) micro:bit
+
+#### 3. Present
+- writeup with derivations, truth tables
+- videos of circuits operating
+- programs used
 
 ### Section 5: Truth table on the micro:bit
 
-**TODO**
+#### 1. Study
+- truth table as a definition of a logic function
+- next to each other with 2 inputs: is there an output (function) that is missing?
+- more than two inputs
+- minimization and a glimpse of Karnaugh maps
+
+#### 2. Apply
+- write a logic verifier program for the micro:bit
+- it should identify and name the logic function of a gate IC or combination
+
+#### 3. Present
+- anwers to questions
+- programs written
+- videos of circuits operating
 
 ### Section 6: Bi-directional 3-bit binary ripple counter (asynchronous)
 
-**TODO**
+**TODO:** Multiplexors are a major element of combinational control ciruits.
 
 ### Section 7: Bi-directional synchronous 3-bit binary counter
 
 **TODO**
 
 ### Section 8: Bi-directional synchronous modulo counters
-
-**TODO:** Introduce combinational circuits!
 
 #### 5.1 Study
 
