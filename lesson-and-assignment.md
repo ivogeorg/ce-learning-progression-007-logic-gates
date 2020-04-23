@@ -48,11 +48,11 @@ Logic gates are the crucial layer in the _hardware stack_ of a computer, in whic
 On the electrical level, _logic low_, commonly designated as `0`, is usually taken to be 0V or _ground_ (which is the common reference volgate for the whole circuit), and _logic high_, commonly designated at `1`, is the highest voltage at which the circuit operates. Common logic-high voltages in electronics are 3.3V and 5V. Other values in the range 1V-12V are less common.
 
 The continuous voltage range between _logic low_ and _logic high_ is usually divided in 3 distinct bands:
-- _logic low_ is between 0V and V<sup>low</sup><sub>max<sub>
-- intermediate forbidden between V<sup>low</sup><sub>max<sub> and V<sup>high</sup><sub>min<sub>
-- _logic high_ is between V<sup>high</sup><sub>min<sub> and V<sup>high</sup><sub>max<sub> (say 3.3V or 5V)
+- _logic low_: [0V, V<sup>low</sup><sub>max</sub>];
+- intermediate forbidden: [V<sup>low</sup><sub>max</sub>, V<sup>high</sup><sub>min</sub>];
+- _logic high_: [V<sup>high</sup><sub>min</sub>, V<sup>high</sup><sub>max</sub>], where V<sup>high</sup><sub>max</sub> is either 3.3V or 5V.
 
-The intermediate band simplifies the recognition circuitry and filters noise. The simplicity of dividing the voltage range into only 3 bands is also one of the chief advantages of _binary_ as the fundamental number system of computing.
+The intermediate band serves as a buffer, simplifying the recognition circuitry and filtering noise. The simplicity of dividing the voltage range into only 3 bands is also one of the chief advantages of _binary_ as the fundamental number system of computing.
    
 ##### Logical functions
 Logic gates perform _functions_ (relations between input and output signals, in which there is a _single_ output for every _combination of outputs_) on signals that can take one of two values: _logic low_ (aka `0`, or `False`) and _logic high_ (aka `1`, or `True`). In other words, logical functions have the same _domain_ and _range_, equal to the discrete set of `{0, 1}`. (_Note that this is the notation for a **discrete** range. In our case, it consists of the set of numbers 0 and 1, and no others. **Continuous** ranges are represented with the following notation: `[0, 1)` (real-number interval, half-open on the right, including all real numbers between 0.0 and 1.0, excluding 1.0), `(0, 1]`, and `[0, 1]`._) Once we start talking about logic gates and design more complex computational circuits out of them, we forget about voltages, currents, and impedances. Thus, logic gates bridge the _electrical layer_ and the _logical layer_ in the _computer stack_.
