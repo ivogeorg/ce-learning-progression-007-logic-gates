@@ -38,7 +38,7 @@ The human mind is a very fine machine with amazing capabilities. And like any co
 
 This is a lesson and assignment on _logic gates_. Logic gates are circuits which apply logical functions on their inputs and output the result. Logic gates can have 1 or more inputs but usually have only 1 output. They are the building blocks of modern computational hardware, including arithmetic, logic, and control circuits. The logic gates themselves are built out of transistors.
 
-### Section 1: AND, OR, and NOT gates from NPN transistors
+### Section 1: AND, OR, and NOT gates from NPN transistors (IN PROGRESS)
 
 #### 1. Study
 - Logic levels
@@ -56,7 +56,7 @@ This is a lesson and assignment on _logic gates_. Logic gates are circuits which
 #### 3. Present
 - videos of the circuits operating
 
-### Section 2: Drive and read a gate with the micro:bit
+### Section 2: Drive and read a gate with the micro:bit (IN PROGRESS)
 
 #### 1. Study
 - where is the "output"
@@ -72,7 +72,7 @@ This is a lesson and assignment on _logic gates_. Logic gates are circuits which
 - videos of the circuits operating
 - programs used
 
-### Section 3: Logic gate ICs
+### Section 3: Logic gate ICs (IN PROGRESS)
 
 #### 1. Study
 - reading the datasheets
@@ -87,7 +87,7 @@ This is a lesson and assignment on _logic gates_. Logic gates are circuits which
 #### 3. Present
 - equivalent to previous: measurements and video
 
-### Section 4: Combinational logic
+### Section 4: Combinational logic (IN PROGRESS)
 
 #### 1. Study
 - another pass of Boolean algebra and truth tables
@@ -106,7 +106,7 @@ This is a lesson and assignment on _logic gates_. Logic gates are circuits which
 - videos of circuits operating
 - programs used
 
-### Section 5: Truth table on the micro:bit
+### Section 5: Truth table on the micro:bit (IN PROGRESS)
 
 #### 1. Study
 - truth table as a definition of a logic function
@@ -125,7 +125,7 @@ This is a lesson and assignment on _logic gates_. Logic gates are circuits which
 - programs written
 - videos of circuits operating
 
-### Section 6: Bi-directional 3-bit binary ripple counter (asynchronous)
+### Section 6: Bi-directional 3-bit binary ripple counter (asynchronous) (IN PROGRESS)
 
 #### 1. Study
 - synchronous vs asynchronous
@@ -143,7 +143,7 @@ This is a lesson and assignment on _logic gates_. Logic gates are circuits which
 - program source
 - video
 
-### Section 7: Bi-directional synchronous circuits
+### Section 7: Bi-directional synchronous circuits (IN PROGRESS)
 
 #### 1. Study
 - pros and cons of synchronous and asynchronous (not just counters)
@@ -159,7 +159,7 @@ This is a lesson and assignment on _logic gates_. Logic gates are circuits which
 - programs
 - videos
 
-### Section 8: Bi-directional synchronous modulo counters
+### Section 8: Synchronous modulo counters (IN PROGRESS)
 
 #### 1. Study
 - encoding and decoding
@@ -169,9 +169,7 @@ This is a lesson and assignment on _logic gates_. Logic gates are circuits which
 - 3-bit upmod-5 counter (local reset)
 - 3-bit down mod-6 counter (local reset)
 (- 3-bit circuit that cycles through the sequence 0-1-2-3-4-5-4-3-2-1-0-1-2-3-4-5-6-5-4-3-2-1-0-...)
-- if it can't fit, remove one flip-flop chip, and do 0-1-2-3-2-1-0-1-2-1-0-... (opens up a control signal from micro:bit)
-
-**TODO:** Can the last one fit on the long breadboard?
+- if it can't fit, remove one flip-flop chip, and do 0-1-2-**3**-2-1-0-1-**2**-1-0-... (opens up a control signal from micro:bit)
 
 1. Build a [_combinational circuit_](https://www.electronics-tutorials.ws/combination/comb_1.html) out of [_logic gate_](https://en.wikipedia.org/wiki/Logic_gate) [ICs](https://en.wikipedia.org/wiki/List_of_7400-series_integrated_circuits) (AND, OR, NOT, etc.) to drive one of the control signals to change your circuit from a mod-8 counter to a **mod-5 counter**:
    1. Design the signal necessary to force the counter to cycle back to `000` before it reaches `101`.
