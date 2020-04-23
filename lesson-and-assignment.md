@@ -1,7 +1,7 @@
 # CPE 1040 - Spring 2020 (IN PROGRESS)
 
 Author: Ivo Georgiev, PhD  
-Last updated: 2020-04-22   
+Last updated: 2020-04-23   
 Code: 9acff7cc344309ac25976869a50535751d4b970d      
 
 ![alt text](images/CPE-Asst6-Modulo-Ctr.jpg "Final circuit for CPE 1040 Asst 6")
@@ -38,23 +38,73 @@ The human mind is a very fine machine with amazing capabilities. And like any co
 
 This is a lesson and assignment on _logic gates_. Logic gates are circuits which apply logical functions on their inputs and output the result. Logic gates can have 1 or more inputs but usually have only 1 output. They are the building blocks of modern computational hardware, including arithmetic, logic, and control circuits. The logic gates themselves are built out of transistors.
 
-### Section 1: AND, OR, and NOT gates from NPN transistors (IN PROGRESS)
+### Section 1: AND, OR, and NOT gates from NPN transistors
 
 #### 1. Study
-- Logic levels
-- Logical functions
-- Boolean algebra
-- Truth tables
-- Logic gates out of transistors (videos)
+
+##### Logic levels
+Logic gates are the crucial layer in the _hardware stack_ of a computer, in which continuous voltages are _discretized and abstracted_ into the 1s and 0s that represent _binary numbers_. While logic gates are implemented via complex _transistor-transistor logic_ or _diode-transistor logic_, their function is simple and can be understood in terms of just _functions of 0s and 1s_.
+
+On the electrical level, _logic low_, commonly designated as `0`, is usually taken to be 0V or _ground_ (which is the common reference volgate for the whole circuit), and _logic high_, commonly designated at `1`, is the highest voltage at which the circuit operates. Common logic-high voltages in electronics are 3.3V and 5V. Other values in the range 1V-12V are less common.
+
+The continuous voltage range between _logic low_ and _logic high_ is usually divided in 3 distinct bands:
+- _logic low_ is between 0V and V<sup>low</sup><sub>max<sub>
+- intermediate forbidden between V<sup>low</sup><sub>max<sub> and V<sup>high</sup><sub>min<sub>
+- _logic high_ is between V<sup>high</sup><sub>min<sub> and V<sup>high</sup><sub>max<sub> (say 3.3V or 5V)
+
+The intermediate band simplifies the recognition circuitry and filters noise. The simplicity of dividing the voltage range into only 3 bands is also one of the chief advantages of _binary_ as the fundamental number system of computing.
+   
+##### Logical functions
+Logic gates perform _functions_ (relations between input and output signals, in which there is a _single_ output for every _combination of outputs_) on signals that can take one of two values: _logic low_ (aka `0`, or `False`) and _logic high_ (aka `1`, or `True`). In other words, logical functions have the same _domain_ and _range_, equal to the discrete set of `{0, 1}`. (_Note that this is the notation for a **discrete** range. In our case, it consists of the set of numbers 0 and 1, and no others. **Continuous** ranges are represented with the following notation: `[0, 1)` (real-number interval, half-open on the right, including all real numbers between 0.0 and 1.0, excluding 1.0), `(0, 1]`, and `[0, 1]`._) Once we start talking about logic gates and design more complex computational circuits out of them, we forget about voltages, currents, and impedances. Thus, logic gates bridge the _electrical layer_ and the _logical layer_ in the _computer stack_.
+
+The inputs of logic gates are all the combinations of the number of inputs, where each input is in the range `{0, 1}`. For example, a 2-input gate will have the following 4 possible different inputs: `00`, `01`, `10`, and `11`. What this means is that, if we designate the 2 inputs "A" and "B", the input combinations are all of the form "AB". (_Note that here we use the term "combinations" in a mathematically imprecise way, as what we are talking about are actually "permutations". For example, `10` and `01` are **distinct permutations** whereas they represent the **same combination**. That is, order matters for permutations and does not matter for combinations. Since we want the two inputs `10` and `01` to be distinct, we are really talking about permutations._) The single output of the 2-input gate is in the range `{0, 1}`.
+
+##### Boolean algebra
+An _algebra_ is a system of rules for the manipulation of a certain _set of mathematical entities_. By this definition, [_Boolean algebra_](https://mathworld.wolfram.com/BooleanAlgebra.html) is the algebra of the two-valued set `{0, 1}`. Mathematically, it is a _ring_, closed under the _meet_ (aka _AND_) and _join_ (aka _OR_) operations, and its two _literals_ are `0` and `1`, which are inverse of each other. Boolean algebra greatly simplifies the understanding, design, and verification of electronic circuits.
+
+##### Truth tables
+Because they are discrete-valued, with the only two values `0` and `1`, logic functions can very conveniently be represented as _truth tables_, which are exhaustive and explicit representation of the functional relationship between inputs and outputs. In fact, truth tables are used to _define_ the logic functions themselves. Here is a sampling:
+
+A | B | /A (aka NOT) | AB (aka AND) | A+B (aka OR) | /(A+B) (aka NAND)
+--- | --- | --- | --- | --- | ---
+0 | 0 | 1 | 0 | 0 | 1
+0 | 1 | 1 | 0 | 1 | 1
+1 | 0 | 0 | 0 | 1 | 1
+1 | 1 | 0 | 1 | 1 | 0    
+
+###### Notation                                          
+The symbol /A is equivalent to "A-bar" as in 
+```
+_
+A
+```
+This means the _inverse_ of A. `1` is the inverse of `0`, and vice versa.
+
+##### Logic gate internals
+As can be seen on page 2 of the [AND gate datasheet IC](http://www.ti.com/lit/ds/symlink/sn74ls08.pdf), logic gates are internally implemented as transistor-and-diode cicuits, of which the two principle families are _transistor-transistor logic (TTL)_ and _diode-transistor logic (DTL)_. As we will see in the next part, a basic version of the three principal logic gates NOT, AND, and OR can be implemented with 1 (for NOT) or 2 (for AND and OR) NPN transistors. The industrial implementation looks so much more complicated because it has to meet requirements for _signal stability_, _switching speed_, _drive capability_, and various other parameters, all of which are listed in the [datasheet](http://www.ti.com/lit/ds/symlink/sn74ls08.pdf).
 
 #### 2. Apply
-- build NOT from 1 NPN transistor (R+LED load)
-- build AND from 2 NPN transistors (R+LED load)
-- build OR from 2 NPN transistors (R+LED load)
-- drive the base from the micro:bit
+1. Using the axioms of Boolean algebra, prove/derive/show [DeMorgan's Laws](https://en.wikipedia.org/wiki/De_Morgan%27s_laws). This exercise provides a very stable kernel of understanding of Boolean algebra and logical circuits.
+2. Using 1 NPN transistor, an LED, and appropriate resistors, build an _inverter_ (aka NOT) gate. In partcular, when the base of the transistor is at 0V, the LED has to be ON, and, vice versa, when the base is at 5V, the LED has to be OFF. Feel free to follow [this guide](https://www.petervis.com/Education/logic-gates/transistor-logic-not-gate-inverter.html). _Hint: The two resistors have to be matched. Since we haven't provided 1K Ohm resistors, and the 10K Ohm ones limit the current too much, you can use 3 x 220 Ohm resistors for the base, and 2 x 220 Ohm ones for the collector load, both **in series**._
+3. Using 2 NPN transistors, on LED, and appropriate resistors, build and OR gate. In particular, when both bases are at 0V, the LED should be OFF, and when at least one base is at 5V, the LED should be ON. _Hint: Think of our basic NPN circuit with 10K Ohm at the base and a resistor-and-LED load on the collector. What if you build a second NPN subcircuit as a mirror of "acorss" the first one, and connect the collectors of both together? Try to draw the circuit before you look it up on the [Internet](#logic-gates)._
+4. The previous 3 circuits could be driven by just plugging the wire at the base (with a 10K resistor!) directly into the 5V or 0V rail. Now take two converter channels and run the base wires over to the micro:bit. Connect to two digital output pins.
+5. Write a program that:
+   1. Drives the two inputs (1 input for NOT) of the gate. _Note that thes are output pins for the micro:bit._
+   2. It uses the two LEDs at the top-left of the micro:bit matrix to indicate the input levels. That is, the LED at `(0, 0)` should represent the "A" input, and the LED at `(1, 0)` should represent the "B" input. Use brightness 5 for `0` and brightness 255 for `1`. The two LEDs "AB" should correspond to the two digital output pin values that drive the gate through the voltage converter.
+   3. Cycles through the 4 input combinations in the order: `00`, `01`, `10`, and `11`.
 
 #### 3. Present
-- videos of the circuits operating
+
+In the [Lab Notebook](README.md), include:
+1. A short narrative about the experiment.
+2. The derivation of DeMorgan's Laws drawn on paper or rendered in mathematical notation, in an image.
+3. Short video of the operation of the circuit from 1.2.2.
+3. Short video of the operation of the circuit from 1.2.3.
+4. Short video of the operation of the circuit from 1.2.4.
+5. Short video of the operation of each of the circuits from 2.2.5. _Hint: You can build them side by side and only switch the base inputs across._
+
+In the [repository](./), include:
+1. File `microbit-program-1-2-5.js` with the code you used in task 1.2.5.
 
 ### Section 2: Drive and read a gate with the micro:bit (IN PROGRESS)
 
@@ -212,11 +262,13 @@ This is a lesson and assignment on _logic gates_. Logic gates are circuits which
 
 ### Logic gates
 
-**TODO**
+1. Vodeo of [logic gates out of transistors](https://www.youtube.com/watch?v=SW2Bwc17_wA). Note, this is an implementation with MOSFET transistors, which, in conctrast to BJTs, have no base current but operate on the principle of a _voltage-regulated gate_.
+2. Video tutorial of [BJT and MOSFET transistors](https://www.youtube.com/watch?v=EBcSqrRby_Y) side-by-side.
+2. Video tutorial for [building logic gates out of transistors](https://www.youtube.com/watch?v=sTu3LwpF6XI&t=435s)
 
 #### Logic gate datasheets
 
-**TODO**
+1. See the [BOM](https://docs.google.com/document/d/18IDsrQlZY_QkmWG7FFtGqd9M2S1wL8ShJrD00aHwBwQ/edit#heading=h.o3s6rnopwwhc) of the take-home lab kit.
 
 ### Flip-flops
 1. Very in-depth yet accessible Wikipedia article on [flip-flops](https://en.wikipedia.org/wiki/Flip-flop_(electronics))
