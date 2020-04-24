@@ -161,10 +161,68 @@ In the [repository](./), include:
 ### Section 3: Logic gate ICs (IN PROGRESS)
 
 #### 1. Study
-- reading the datasheets
-- how logic gates are actually built
-- correct placement and powering of the log gates
-- how much load can the logic gates drive
+
+##### Logic gates in the lab kit
+The logic gates available in the [lab kit](https://docs.google.com/document/d/18IDsrQlZY_QkmWG7FFtGqd9M2S1wL8ShJrD00aHwBwQ/edit?usp=sharing) are listed in the [BOM](https://docs.google.com/document/d/18IDsrQlZY_QkmWG7FFtGqd9M2S1wL8ShJrD00aHwBwQ/edit#heading=h.o3s6rnopwwhc), with links to the datasheets also provided. _Note: You should do your own inspection of the exact part number of each chip, and perform your own search for the exact (or closest) datasheet. The part numbers have the general form XX74YYDDDZ, where XX is the optional family prefix, YY is the logic type, DD/DDD is the gate code, and Z is an optional suffix (see the table below). While most of these IC packages have the **V<sub>CC</sub>** pin in the top-right corner (when properly oriented with the notch up toward the breadboard power supply) and **GND** in the bottom-left corner, you should double check. There might be different chips that provide the same logic gates, so you should make sure you have the datasheet for each one._
+
+A | B | NOT (04) | AND (08) | OR (32) | NAND (00) | XOR (86) | XNOR (135)
+--- | --- | --- | --- | --- | --- | --- | --- 
+0 | 0 | 1 | 0 | 0 | 1 | 0 | 1 
+0 | 1 | 1 | 0 | 1 | 1 | 1 | 0 
+1 | 0 | 0 | 0 | 1 | 1 | 1 | 0 
+1 | 1 | 0 | 1 | 1 | 0 | 0 | 1     
+
+DD/DDD | Function | Units/chip | Chip count | Notes
+--- | --- | --- | --- | ---
+00 | NAND | 4 | 2 | 
+04 | NOT | 4 | 2 | 
+08 | AND | 4 | 2 | 
+32 | OR | 4 | 2 | 
+86 | XOR | 4 | 2 | 
+135 | XOR/XNOR | 4 | 2 | Multiplexed
+
+##### Reading the datasheets
+The contents of the datasheets are going to be similar to the [D-type positive-edge flip-flop datasheet](http://www.ti.com/lit/ds/symlink/sn74ls74a.pdf?ts=1587765899168) that we are already familiar with. In particular:
+   1. There is a verbal description.
+      1. Note that all our ICs are _positive logic_, meaning that 1 = 5V and 0 = 0V. (For _negative_, it's the opposite.)
+   2. A function and/or truth table gives an at-a-glance definition of the gate's function.
+   3. The conventionalal schematic symbol is shown. For example, the following is (roughly) the symbol for the AND gate:
+      ```
+      A                 |-----------------\
+      ------------------|                   \
+                        |                   |                AB
+                        |                   |------------------
+      B                 |                   |
+      ------------------|                   /
+                        |-----------------/
+      ```
+   4. The different packages are shown and their pinouts. _You should make sure you are looking at the right package!_
+   5. Optionally, the underlying circuit schematic is shown.
+      1. You may notice that none of our gates have open collector outputs. Instead, they have _totem-pole_ outputs.
+   6. The timing diagrams are shown. They contain, among other parameters:
+      1. The signal propagation time.
+      2. The switching speed.
+      3. The trigger levels.
+   7. Various other physical and electrical operating characteristics are specified. Some of those are:
+      1. Most importantly for us is the logic-high voltage, which for our gates is 5V.
+      2. Load drive capabilities.
+
+##### The underlying circuits
+Despite the simplicity of the logic gates on the functional level, the underlying circuits may be fairly complex. 
+
+![alt text](images/and-gate-circuit-schematic.png "And gate circuit schematic")
+Circuit schematic of the AND gate [SN74LS08](http://www.ti.com/lit/ds/symlink/sn74ls08.pdf) implemented in TTL.
+
+If the first look at the schematic is bewildering, you should bear in mind that the technology is developed over time, with new discoveries and developments being incorporated continuously into the available products until they have reached their present-day complesity. Here is a short article on [TTL logic](https://www.elprocus.com/transistor-transistor-logic-ttl/), one of the most widely used electronic technologies. To take a look into the deeper complexities and benefits of the underlying circuit design and implementation, you can peruse [these slides on DTL and TTL](materials/DTL-and-TTL-Slides.pdf). There have been hundreds of thousands of _patents_ generated along the way. This said, the gates included in our lab kit use 30-40 year old technology.
+
+##### Correct placement
+Please, be careful in placing the gate ICs on the breadboard. ICs should be oriented with the _notch_ toward the power supply. Here are two pictures of the gate ICs:
+
+| IC Notches | The "notch" of '135 |
+:---:|:---:
+![](images/ic-notches-and-orientation.jpg) | ![](135-ic-orientation.jpg)
+
+Follow the guidelines in the [lab kit care instructions](https://docs.google.com/document/d/18IDsrQlZY_QkmWG7FFtGqd9M2S1wL8ShJrD00aHwBwQ/edit#heading=h.h1az8g4pd24e). _And don't forget to power and ground your chips. They can't work without being connected to the **V<sub>CC</sub>** and **GND** rails._
 
 #### 2. Apply
 - for each logic gate, exchange the NPN circuit from Seciton 2 with a corresponding IC gate
