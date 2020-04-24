@@ -158,7 +158,7 @@ In the [repository](./), include:
 1. File `microbit-program-2-2-4.js` with the code you used in task 2.2.4.
 2. File `microbit-program-2-2-5.js` with the code you used in task 2.2.5.
 
-### Section 3: Logic gate ICs (IN PROGRESS)
+### Section 3: Logic gate ICs
 
 #### 1. Study
 
@@ -218,18 +218,27 @@ If the first look at the schematic is bewildering, you should bear in mind that 
 ##### Correct placement
 Please, be careful in placing the gate ICs on the breadboard. ICs should be oriented with the _notch_ toward the power supply. Here are two pictures of the gate ICs:
 
-| IC Notches | The "notch" of '135 |
+| IC notches | The "notch" of '135 |
 :---:|:---:
-![](images/ic-notches-and-orientation.jpg) | ![](135-ic-orientation.jpg)
+![](images/ic-notches-and-orientation.jpg) | ![](images/ls135-ic-orientation.jpg)
 
-Follow the guidelines in the [lab kit care instructions](https://docs.google.com/document/d/18IDsrQlZY_QkmWG7FFtGqd9M2S1wL8ShJrD00aHwBwQ/edit#heading=h.h1az8g4pd24e). _And don't forget to power and ground your chips. They can't work without being connected to the **V<sub>CC</sub>** and **GND** rails._
+In both pictures, the ICs are oriented with the notch (or equivalent) to the right. Follow the guidelines in the [lab kit care instructions](https://docs.google.com/document/d/18IDsrQlZY_QkmWG7FFtGqd9M2S1wL8ShJrD00aHwBwQ/edit#heading=h.h1az8g4pd24e). _And don't forget to power and ground your chips. They can't work without being connected to the **V<sub>CC</sub>** and **GND** rails._
 
 #### 2. Apply
-- for each logic gate, exchange the NPN circuit from Seciton 2 with a corresponding IC gate
-- measure the voltage levels on both sides (3.3V and 5V)
+1. For each logic gate (pick one of each quad chip), test the functional operation by setting the inputs and checking the outputs. _Measure the output voltages. Alternatively, you can have a small current-limiting-resistor+LED load circuit to test visually._
+2. Use the same setup from 2.2.5 (that is, using _digital input pins_ on the micro:bit), this time substituting the IC gate for the piecewise NPN-transistor gate circuit. _Do this for all non-multiplexed gates (NOT, AND, OR, NAND, and XOR)._
+3. Add a control signal from the micro:bit to drive the _selector signal_ **C** of the [DM74LS135N](https://archive.org/stream/bitsavers_tidataBookVol2_45945352/1985_The_TTL_Data_Book_Vol_2#page/n567/mode/2up) gate. Add an indication for the state of the C-pin on the LED at position (4, 0). Modify the program accordingly. _Can you switch between the XOR and XNOR gates? Note that you don't have to switch the inputs and outputs. The gate changes "inside"!_
 
 #### 3. Present
-- equivalent to previous: measurements and video
+In the [Lab Notebook](README.md), include:
+1. A short narrative about the experiment.
+2. Gate output voltage measurements for 3.2.1.
+3. Videos of the operating circuits from 3.2.2.
+4. Short video of the operation of the circuit from 3.2.3.
+
+In the [repository](./), include:
+1. File `microbit-program-3-2-2.js` with the code you used in task 3.2.2.
+2. File `microbit-program-3-2-3.js` with the code you used in task 3.2.3.
 
 ### Section 4: Combinational logic (IN PROGRESS)
 
