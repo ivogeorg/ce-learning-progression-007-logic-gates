@@ -178,14 +178,14 @@ In the [repository](./), include:
 #### 1. Study
 - another pass of Boolean algebra and truth tables
 - functional sets: OR+NOT, AND+NOT, NAND, NOR
-- combinational logic: vs sequential, propagation delay, logic minimization
+- combinational logic: vs sequential, propagation delay, logic minimization/simplification
 
 #### 2. Apply
 - compose combinational ciruits to build AND out of OR+NOT, OR out of AND+NOT
 - compose combinational ciruits to build AND, OR, and NOT out of NAND
 - compose combinational ciruits to build XOR out of NAND
-- drive with the micro:bit (input signals)
 - build direct and combinational next to each other and verify same output: (i) with an AND gate and an LED load, (ii) micro:bit
+- drive with the micro:bit (input signals)
 
 #### 3. Present
 - writeup with derivations, truth tables
