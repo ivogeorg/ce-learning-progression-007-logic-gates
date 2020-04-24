@@ -106,16 +106,17 @@ In the [Lab Notebook](README.md), include:
 In the [repository](./), include:
 1. File `microbit-program-1-2-5.js` with the code you used in task 1.2.5.
 
-### Section 2: Drive and read a gate with the micro:bit (IN PROGRESS)
+### Section 2: Drive and read NPN-transistor-based gates with the micro:bit (IN PROGRESS)
 
 #### 1. Study
 
 In the circuits from the previous section, the inputs are clearly the transistor bases. The inverter operates the LED opposite of the connection state of the base. The AND gate operates the LED only when both bases are connected to V<sub>cc</sub>, and the OR gate operates the LED whenever at least one of the bases is connected to V<sub>cc</sub>. The LED (with its current-limiting resistor) is the _load_ of the circuit and the indicator of the proper functioning of our gate. Clearly, a lit-up LED represents _logic high_ and a dark LED represents _logic low_.
 
-So, where exactly are the _outputs_ of gates? The packaged gates are designed so their output pins can drive significant loads without affecting the internal circuit itself and altering its functional parameters. We'll say more about that in a later section. For now, and for our simplistic implementation of logic gates we need to carefully identify the output of the gate, so that the circuit does not including the load itself. In other words, the circuit terminal we designate as _output_ should allow interchangeable loads.
+So, where exactly are the _outputs_ of gates? The packaged gates are designed so their output pins can drive significant loads without affecting the internal circuit itself and altering its functional parameters, and, conversely, without imposing constraints or requirements to the structure of the load circuit. We'll say more about that in a later section. For now, and for our simplistic implementation of logic gates we need to carefully identify the output of the gate, so that the circuit does not including the load itself. In other words, the circuit terminal we designate as _output_ should allow interchangeable loads.
 
 - where is the "output"
 - voltage at the output
+- open collector & pullup resistor - a matter of definition, but pullup R required
 
 #### 2. Apply
 - measure the output voltage
