@@ -1,7 +1,7 @@
 # CPE 1040 - Spring 2020 (IN PROGRESS)
 
 Author: Ivo Georgiev, PhD  
-Last updated: 2020-04-20   
+Last updated: 2020-04-23   
 Code: 9acff7cc344309ac25976869a50535751d4b970d      
 
 ![alt text](images/CPE-Asst6-Modulo-Ctr.jpg "Final circuit for CPE 1040 Asst 6")
@@ -36,45 +36,228 @@ The human mind is a very fine machine with amazing capabilities. And like any co
 
 ## Lesson & Assignment 007: Logic gates (IN PROGRESS)
 
-**TODO:** Overview of both lesson and assignment.
+This is a lesson and assignment on _logic gates_. Logic gates are circuits which apply logical functions on their inputs and output the result. Logic gates can have 1 or more inputs but usually have only 1 output. They are the building blocks of modern computational hardware, including arithmetic, logic, and control circuits. The logic gates themselves are built out of transistors.
 
 ### Section 1: AND, OR, and NOT gates from NPN transistors
 
-**TODO**
+#### 1. Study
 
-### Section 2: Drive and read a gate with the micro:bit
+##### Logic levels
+Logic gates are the crucial layer in the _hardware stack_ of a computer, in which continuous voltages are _discretized and abstracted_ into the 1s and 0s that represent _binary numbers_. While logic gates are implemented via complex _transistor-transistor logic_ or _diode-transistor logic_, their function is simple and can be understood in terms of just _functions of 0s and 1s_.
 
-**TODO**
+On the electrical level, _logic low_, commonly designated as `0`, is usually taken to be 0V or _ground_ (which is the common reference volgate for the whole circuit), and _logic high_, commonly designated at `1`, is the highest voltage at which the circuit operates. Common logic-high voltages in electronics are 3.3V and 5V. Other values in the range 1V-12V are less common.
 
-### Section 3: Logic gate ICs
+The continuous voltage range between _logic low_ and _logic high_ is usually divided in 3 distinct bands:
+- _logic low_: [0V, V<sup>low</sup><sub>max</sub>];
+- intermediate forbidden: [V<sup>low</sup><sub>max</sub>, V<sup>high</sup><sub>min</sub>];
+- _logic high_: [V<sup>high</sup><sub>min</sub>, V<sup>high</sup><sub>max</sub>], where V<sup>high</sup><sub>max</sub> is either 3.3V or 5V.
 
-**TODO**
+The intermediate band serves as a buffer, simplifying the recognition circuitry and filtering noise. The simplicity of dividing the voltage range into only 3 bands is also one of the chief advantages of _binary_ as the fundamental number system of computing.
+   
+##### Logical functions
+Logic gates perform _functions_ (relations between input and output signals, in which there is a _single_ output for every _combination of outputs_) on signals that can take one of two values: _logic low_ (aka `0`, or `False`) and _logic high_ (aka `1`, or `True`). In other words, logical functions have the same _domain_ and _range_, equal to the discrete set of `{0, 1}`. (_Note that this is the notation for a **discrete** range. In our case, it consists of the set of numbers 0 and 1, and no others. **Continuous** ranges are represented with the following notation: `[0, 1)` (real-number interval, half-open on the right, including all real numbers between 0.0 and 1.0, excluding 1.0), `(0, 1]`, and `[0, 1]`._) Once we start talking about logic gates and design more complex computational circuits out of them, we forget about voltages, currents, and impedances. Thus, logic gates bridge the _electrical layer_ and the _logical layer_ in the _computer stack_.
 
-### Section 4: Combinational logic
+The inputs of logic gates are all the combinations of the number of inputs, where each input is in the range `{0, 1}`. For example, a 2-input gate will have the following 4 possible different inputs: `00`, `01`, `10`, and `11`. What this means is that, if we designate the 2 inputs "A" and "B", the input combinations are all of the form "AB". (_Note that here we use the term "combinations" in a mathematically imprecise way, as what we are talking about are actually "permutations". For example, `10` and `01` are **distinct permutations** whereas they represent the **same combination**. That is, order matters for permutations and does not matter for combinations. Since we want the two inputs `10` and `01` to be distinct, we are really talking about permutations._) The single output of the 2-input gate is in the range `{0, 1}`.
 
-**TODO:** Functional sets (???) and building the other gates with them.
+##### Boolean algebra
+An _algebra_ is a system of rules for the manipulation of a certain _set of mathematical entities_. By this definition, [_Boolean algebra_](https://mathworld.wolfram.com/BooleanAlgebra.html) is the algebra of the two-valued set `{0, 1}`. Mathematically, it is a _ring_, closed under the _meet_ (aka _AND_) and _join_ (aka _OR_) operations, and its two _literals_ are `0` and `1`, which are inverse of each other. Boolean algebra greatly simplifies the understanding, design, and verification of electronic circuits.
 
-### Section 5: Truth table on the micro:bit
+##### Truth tables
+Because they are discrete-valued, with the only two values `0` and `1`, logic functions can very conveniently be represented as _truth tables_, which are exhaustive and explicit representation of the functional relationship between inputs and outputs. In fact, truth tables are used to _define_ the logic functions themselves. Here is a sampling:
 
-**TODO**
+A | B | /A (aka NOT) | AB (aka AND) | A+B (aka OR) | /(A+B) (aka NAND)
+--- | --- | --- | --- | --- | ---
+0 | 0 | 1 | 0 | 0 | 1
+0 | 1 | 1 | 0 | 1 | 1
+1 | 0 | 0 | 0 | 1 | 1
+1 | 1 | 0 | 1 | 1 | 0    
 
-### Section 6: Bi-directional 3-bit binary ripple counter (asynchronous)
+###### Notation                                          
+The symbol /A is equivalent to "A-bar" as in 
+```
+_
+A
+```
+This means the _inverse_ of A. `1` is the inverse of `0`, and vice versa.
 
-**TODO**
+##### Logic gate internals
+As can be seen on page 2 of the [AND gate datasheet IC](http://www.ti.com/lit/ds/symlink/sn74ls08.pdf), logic gates are internally implemented as transistor-and-diode cicuits, of which the two principle families are _transistor-transistor logic (TTL)_ and _diode-transistor logic (DTL)_. As we will see in the next part, a basic version of the three principal logic gates NOT, AND, and OR can be implemented with 1 (for NOT) or 2 (for AND and OR) NPN transistors. The industrial implementation looks so much more complicated because it has to meet requirements for _signal stability_, _switching speed_, _drive capability_, and various other parameters, all of which are listed in the [datasheet](http://www.ti.com/lit/ds/symlink/sn74ls08.pdf).
 
-### Section 7: Bi-directional synchronous 3-bit binary counter
+#### 2. Apply
+1. Using the axioms of Boolean algebra, prove/derive/show [DeMorgan's Laws](https://en.wikipedia.org/wiki/De_Morgan%27s_laws). This exercise provides a very stable kernel of understanding of Boolean algebra and logical circuits.
+2. Using 1 NPN transistor, an LED, and appropriate resistors, build an _inverter_ (aka NOT) gate. In partcular, when the base of the transistor is at 0V, the LED has to be ON, and, vice versa, when the base is at 5V, the LED has to be OFF. Feel free to follow [this guide](https://www.petervis.com/Education/logic-gates/transistor-logic-not-gate-inverter.html). _Hint: The two resistors have to be matched. Since we haven't provided 1K Ohm resistors, and the 10K Ohm ones limit the current too much, you can use 3 x 220 Ohm resistors for the base, and 2 x 220 Ohm ones for the collector load, both **in series**._
+3. Using 2 NPN transistors, on LED, and appropriate resistors, build and OR gate. In particular, when both bases are at 0V, the LED should be OFF, and when at least one base is at 5V, the LED should be ON. _Hint: Think of our basic NPN circuit with 10K Ohm at the base and a resistor-and-LED load on the collector. What if you build a second NPN subcircuit as a mirror of "acorss" the first one, and connect the collectors of both together? Try to draw the circuit before you look it up on the [Internet](#logic-gates)._
+4. The previous 3 circuits could be driven by just plugging the wire at the base (with a 10K resistor!) directly into the 5V or 0V rail. Now take two converter channels and run the base wires over to the micro:bit. Connect to two digital output pins.
+5. Write a program that:
+   1. Drives the two inputs (1 input for NOT) of the gate. _Note that thes are output pins for the micro:bit._
+   2. It uses the two LEDs at the top-left of the micro:bit matrix to indicate the input levels. That is, the LED at `(0, 0)` should represent the "A" input, and the LED at `(1, 0)` should represent the "B" input. Use brightness 5 for `0` and brightness 255 for `1`. The two LEDs "AB" should correspond to the two digital output pin values that drive the gate through the voltage converter.
+   3. Cycles through the 4 input combinations in the order: `00`, `01`, `10`, and `11`.
 
-**TODO**
+#### 3. Present
 
-### Section 8: Bi-directional synchronous modulo counters
+In the [Lab Notebook](README.md), include:
+1. A short narrative about the experiment.
+2. The derivation of DeMorgan's Laws drawn on paper or rendered in mathematical notation, in an image.
+3. Short video of the operation of the circuit from 1.2.2.
+3. Short video of the operation of the circuit from 1.2.3.
+4. Short video of the operation of the circuit from 1.2.4.
+5. Short video of the operation of each of the circuits from 2.2.5. _Hint: You can build them side by side and only switch the base inputs across._
 
-**TODO:** Introduce combinational circuits!
+In the [repository](./), include:
+1. File `microbit-program-1-2-5.js` with the code you used in task 1.2.5.
 
-#### 5.1 Study
+### Section 2: Drive and read NPN-transistor-based gates with the micro:bit
 
-**TODO**
+#### 1. Study
 
-#### 5.2 Apply
+In the circuits from the previous section, the inputs are clearly the transistor bases. The inverter operates the LED opposite of the connection state of the base. The AND gate operates the LED only when both bases are connected to V<sub>cc</sub>, and the OR gate operates the LED whenever at least one of the bases is connected to V<sub>cc</sub>. The LED (with its current-limiting resistor) is the _load_ of the circuit and the indicator of the proper functioning of our gate. Clearly, a lit-up LED represents _logic high_ and a dark LED represents _logic low_.
+
+So, where exactly are the _outputs_ of our gates? The packaged gates are designed so their output pins can drive significant loads without affecting the internal circuit itself and altering its functional parameters, and, conversely, without imposing constraints or requirements to the structure of the load circuit. We'll say more about that in a later section. For now, and for our simplistic implementation of logic gates we need to carefully identify the output of the gate, so that the circuit does not including the load itself. In other words, the circuit terminal we designate as _output_ should allow interchangeable loads.
+
+We used the LED subcircuit as our load, so it is most natural to pick its connection point as the output, namely the _collector_ terminal of the NPN-transistor subcircuit(s) which are directly connected to the load. There are two slightly different alternatives that this choice gives us, as can be seen in the following sketch:
+```
+-----------------------------------------------------------------------------------------------------------------------
+|                  Vcc                                                                           Vcc                  |
+|                 -----                                                                         -----                 |
+|                   |                                                                             |                   |
+|              Pullup subcircuit                                                         Load circuit (incl. pullup)  |
+|                   |                                                                             |                   |
+|                   |---------| Output |--- Load circuit                    |---------| Output |---                   |
+|                  /                                                       /                                          |
+|                |/                                                      |/                                           |
+|         ...----|                                                ...----|                                            |
+|                |\                                                      |\                                           |
+|                  \>                                                      \>                                         |
+|     Gate          |                                          Gate         |                                         |
+|     subcircuit    |                                          subcircuit   |                                         |
+|                   .                                                       .                                         |
+|                   .                                                       .                                         |
+|                   .                                                       .                                         |
+-----------------------------------------------------------------------------------------------------------------------
+```
+To understand the difference, you need to realize that when the bases of your gate circuits from the previous section are closed (0V, which is _logic low_), the voltage on the output terminal is Vcc (5V, which is _logic high_). This is essentially the principle of operation of our basic logic gate design. Both variants above include a subcircuit called _pullup_. It contains the connection to Vcc which we need to switch to when there is no current flowing through our gate subcircuit (becase the base(s) is(are) at 0V). The two variants differ in whether our design includes the pullup subcircuit or is left to the load circuit to provide. This latter design is called _open collector_, as the gate circuit does not include the pullup subcircuit. Both designs exist in industry, though the former is more prevalent. It is also the design of our logic gate ICs.
+
+#### 2. Apply
+1. Use a 10K Ohm resistor as the pullup resistor of your gate circuit and designate the collector terminal as the output of the gate.
+2. As you drive the gate with the different input combinations, measure the voltage at the output. _Describe and explain your results._
+3. Connect the output across a channel of the voltage converer and back into micro:bit as an input pin.
+4. Extend the program from the previous section that treats the new input as an _analog_ pin:
+   1. Map the range of input readings (the full range is [0, 1023] but, like the soil sensor, you might not get the full range) and calibrate the readings to only two input values, naturally `0` and `1`.
+   2. Use the calibrated value to light up the LED at position (3, 0), using brightness to distinguish the two values.
+5. Modify the program to treat the input as a _digital_ pin and use the _already mapped_ (aka _discretized_) values to drive the LED at (3, 0).
+
+#### 3. Present
+In the [Lab Notebook](README.md), include:
+1. A short narrative about the experiment.
+2. Gate output voltage measurements and a corresponding description of the mapping in 2.2.4.
+3. Gate output voltage measurements and an explaination of the results. _Are you getting proper digital inputs from the gate output? Is your gate operating properly?_
+4. Short videos of the operation of the circuits from 2.2.4. (One each for NOT, OR, and AND.)
+5. Short videos of the operation of the circuit s from 2.2.5. (One each for NOT, OR, and AND.)
+
+In the [repository](./), include:
+1. File `microbit-program-2-2-4.js` with the code you used in task 2.2.4.
+2. File `microbit-program-2-2-5.js` with the code you used in task 2.2.5.
+
+### Section 3: Logic gate ICs (IN PROGRESS)
+
+#### 1. Study
+- reading the datasheets
+- how logic gates are actually built
+- correct placement and powering of the log gates
+- how much load can the logic gates drive
+
+#### 2. Apply
+- for each logic gate, exchange the NPN circuit from Seciton 2 with a corresponding IC gate
+- measure the voltage levels on both sides (3.3V and 5V)
+
+#### 3. Present
+- equivalent to previous: measurements and video
+
+### Section 4: Combinational logic (IN PROGRESS)
+
+#### 1. Study
+- another pass of Boolean algebra and truth tables
+- functional sets: OR+NOT, AND+NOT, NAND, NOR
+- combinational logic: vs sequential, propagation delay, logic minimization/simplification
+
+#### 2. Apply
+- compose combinational ciruits to build AND out of OR+NOT, OR out of AND+NOT
+- compose combinational ciruits to build AND, OR, and NOT out of NAND
+- compose combinational ciruits to build XOR out of NAND
+- build direct and combinational next to each other and verify same output: (i) with an AND gate and an LED load, (ii) micro:bit
+- drive with the micro:bit (input signals)
+
+#### 3. Present
+- writeup with derivations, truth tables
+- videos of circuits operating
+- programs used
+
+### Section 5: Truth table on the micro:bit (IN PROGRESS)
+
+#### 1. Study
+- truth table as a definition of a logic function
+- next to each other with 2 inputs: is there an output (function) that is missing?
+- more than two inputs
+- minimization and a glimpse of Karnaugh maps
+- multiplexors are a major element of combinational control ciruits.
+
+#### 2. Apply
+- write a logic verifier program for the micro:bit
+- it should identify and name the logic function of a gate IC or combination
+- drive the multiplexor of the XOR/XNOR gate and verify through operation
+
+#### 3. Present
+- anwers to questions
+- programs written
+- videos of circuits operating
+
+### Section 6: Bi-directional 3-bit binary ripple counter (asynchronous) (IN PROGRESS)
+
+#### 1. Study
+- synchronous vs asynchronous
+- ripple & delays
+- down schematic, up schematic, derive control
+- different ways to build a multiplexer
+
+#### 2. Apply
+- remove the MSB of the counter to free a converter channel
+- built a multiplexer from gates
+- drive the selector from the micro:bit
+
+#### 3. Present
+- design writeup, including truth table
+- program source
+- video
+
+### Section 7: Bi-directional synchronous circuits (IN PROGRESS)
+
+#### 1. Study
+- pros and cons of synchronous and asynchronous (not just counters)
+- timing in ciruits (datasheets, levels of abstraction)
+
+#### 2. Apply
+- build a 3-bit synchronous up counter
+- build a 2-bit up/down multiplexed synchronous counter
+- build a 3-bit left/right shifter out of 3 D-flip-flops (control?)
+
+#### 3. Present
+- timing diagrams and schematics
+- programs
+- videos
+
+### Section 8: Synchronous modulo counters (IN PROGRESS)
+
+#### 1. Study
+- encoding and decoding
+- binary numbers and control circuits
+
+#### 2. Apply
+- 3-bit upmod-5 counter (local reset)
+- 3-bit down mod-6 counter (local reset)
+(- 3-bit circuit that cycles through the sequence 0-1-2-3-4-5-4-3-2-1-0-1-2-3-4-5-6-5-4-3-2-1-0-...)
+- if it can't fit, remove one flip-flop chip, and do 0-1-2-**3**-2-1-0-1-**2**-1-0-... (opens up a control signal from micro:bit)
+  - with gates
+  - programmatically
 
 1. Build a [_combinational circuit_](https://www.electronics-tutorials.ws/combination/comb_1.html) out of [_logic gate_](https://en.wikipedia.org/wiki/Logic_gate) [ICs](https://en.wikipedia.org/wiki/List_of_7400-series_integrated_circuits) (AND, OR, NOT, etc.) to drive one of the control signals to change your circuit from a mod-8 counter to a **mod-5 counter**:
    1. Design the signal necessary to force the counter to cycle back to `000` before it reaches `101`.
@@ -85,9 +268,10 @@ The human mind is a very fine machine with amazing capabilities. And like any co
 4. Commit to your repository as file `mod-5-clr.js`.
 5. Record a video showing mod-5 counter without external logic gates, and link to README with a brief explanation of your code.
 
-#### 5.3
-
-**TODO**
+#### 3. Present
+- diagrams, schematics, control circuit designs
+- programs
+- videos
 
 ## Resources
 
@@ -116,11 +300,13 @@ The human mind is a very fine machine with amazing capabilities. And like any co
 
 ### Logic gates
 
-**TODO**
+1. Vodeo of [logic gates out of transistors](https://www.youtube.com/watch?v=SW2Bwc17_wA). Note, this is an implementation with MOSFET transistors, which, in conctrast to BJTs, have no base current but operate on the principle of a _voltage-regulated gate_.
+2. Video tutorial of [BJT and MOSFET transistors](https://www.youtube.com/watch?v=EBcSqrRby_Y) side-by-side.
+2. Video tutorial for [building logic gates out of transistors](https://www.youtube.com/watch?v=sTu3LwpF6XI&t=435s)
 
 #### Logic gate datasheets
 
-**TODO**
+1. See the [BOM](https://docs.google.com/document/d/18IDsrQlZY_QkmWG7FFtGqd9M2S1wL8ShJrD00aHwBwQ/edit#heading=h.o3s6rnopwwhc) of the take-home lab kit.
 
 ### Flip-flops
 1. Very in-depth yet accessible Wikipedia article on [flip-flops](https://en.wikipedia.org/wiki/Flip-flop_(electronics))
