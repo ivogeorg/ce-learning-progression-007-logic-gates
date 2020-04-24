@@ -106,27 +106,57 @@ In the [Lab Notebook](README.md), include:
 In the [repository](./), include:
 1. File `microbit-program-1-2-5.js` with the code you used in task 1.2.5.
 
-### Section 2: Drive and read NPN-transistor-based gates with the micro:bit (IN PROGRESS)
+### Section 2: Drive and read NPN-transistor-based gates with the micro:bit
 
 #### 1. Study
 
 In the circuits from the previous section, the inputs are clearly the transistor bases. The inverter operates the LED opposite of the connection state of the base. The AND gate operates the LED only when both bases are connected to V<sub>cc</sub>, and the OR gate operates the LED whenever at least one of the bases is connected to V<sub>cc</sub>. The LED (with its current-limiting resistor) is the _load_ of the circuit and the indicator of the proper functioning of our gate. Clearly, a lit-up LED represents _logic high_ and a dark LED represents _logic low_.
 
-So, where exactly are the _outputs_ of gates? The packaged gates are designed so their output pins can drive significant loads without affecting the internal circuit itself and altering its functional parameters, and, conversely, without imposing constraints or requirements to the structure of the load circuit. We'll say more about that in a later section. For now, and for our simplistic implementation of logic gates we need to carefully identify the output of the gate, so that the circuit does not including the load itself. In other words, the circuit terminal we designate as _output_ should allow interchangeable loads.
+So, where exactly are the _outputs_ of our gates? The packaged gates are designed so their output pins can drive significant loads without affecting the internal circuit itself and altering its functional parameters, and, conversely, without imposing constraints or requirements to the structure of the load circuit. We'll say more about that in a later section. For now, and for our simplistic implementation of logic gates we need to carefully identify the output of the gate, so that the circuit does not including the load itself. In other words, the circuit terminal we designate as _output_ should allow interchangeable loads.
 
-- where is the "output"
-- voltage at the output
-- open collector & pullup resistor - a matter of definition, but pullup R required
+We used the LED subcircuit as our load, so it is most natural to pick its connection point as the output, namely the _collector_ terminal of the NPN-transistor subcircuit(s) which are directly connected to the load. There are two slightly different alternatives that this choice gives us, as can be seen in the following sketch:
+```
+-----------------------------------------------------------------------------------------------------------------------
+|                  Vcc                                                                           Vcc                  |
+|                 -----                                                                         -----                 |
+|                   |                                                                             |                   |
+|              Pullup subcircuit                                                         Load circuit (incl. pullup)  |
+|                   |                                                                             |                   |
+|                   |---------| Output |--- Load circuit                    |---------| Output |---                   |
+|                  /                                                       /                                          |
+|                |/                                                      |/                                           |
+|         ...----|                                                ...----|                                            |
+|                |\                                                      |\                                           |
+|                  \>                                                      \>                                         |
+|     Gate         |                                          Gate         |                                          |
+|     subcircuit   |                                          subcircuit   |                                          |
+|                  .                                                       .                                          |
+|                  .                                                       .                                          |
+|                  .                                                       .                                          |
+-----------------------------------------------------------------------------------------------------------------------
+```
+To understand the difference, you need to realize that when the bases of your gate circuits from the previous section are closed (0V, which is _logic low_), the voltage on the output terminal is Vcc (5V, which is _logic high_). This is essentially the principle of operation of our basic logic gate design. Both variants above include a subcircuit called _pullup_. It contains the connection to Vcc which we need to switch to when there is no current flowing through our gate subcircuit (becase the base(s) is(are) at 0V). The two variants differ in whether our design includes the pullup subcircuit or is left to the load circuit to provide. This latter design is called _open collector_, as the gate circuit does not include the pullup subcircuit. Both designs exist in industry, though the former is more prevalent. It is also the design of our logic gate ICs.
 
 #### 2. Apply
-- measure the output voltage
-- feed back into micro:bit as input pin: (i) analog, and (ii) ditigal
-- display as 0 or 1 on LED matrix
+1. Use a 10K Ohm resistor as the pullup resistor of your gate circuit and designate the collector terminal as the output of the gate.
+2. As you drive the gate with the different input combinations, measure the voltage at the output. _Describe and explain your results._
+3. Connect the output across a channel of the voltage converer and back into micro:bit as an input pin.
+4. Extend the program from the previous section that treats the new input as an _analog_ pin:
+   1. Map the range of input readings (the full range is [0, 1023] but, like the soil sensor, you might not get the full range) and calibrate the readings to only two input values, naturally `0` and `1`.
+   2. Use the calibrated value to light up the LED at position (3, 0), using brightness to distinguish the two values.
+5. Modify the program to treat the input as a _digital_ pin and use the _already mapped_ (aka _discretized_) values to drive the LED at (3, 0).
 
 #### 3. Present
-- writeup on voltage levels
-- videos of the circuits operating
-- programs used
+In the [Lab Notebook](README.md), include:
+1. A short narrative about the experiment.
+2. Gate output voltage measurements and a corresponding description of the mapping in 2.2.4.
+3. Gate output voltage measurements and an explaination of the results. _Are you getting proper digital inputs from the gate output? Is your gate operating properly?_
+4. Short videos of the operation of the circuits from 2.2.4. (One each for NOT, OR, and AND.)
+5. Short videos of the operation of the circuit s from 2.2.5. (One each for NOT, OR, and AND.)
+
+In the [repository](./), include:
+1. File `microbit-program-2-2-4.js` with the code you used in task 2.2.4.
+2. File `microbit-program-2-2-5.js` with the code you used in task 2.2.5.
 
 ### Section 3: Logic gate ICs (IN PROGRESS)
 
