@@ -128,11 +128,11 @@ We used the LED subcircuit as our load, so it is most natural to pick its connec
 |         ...----|                                                ...----|                                            |
 |                |\                                                      |\                                           |
 |                  \>                                                      \>                                         |
-|     Gate         |                                          Gate         |                                          |
-|     subcircuit   |                                          subcircuit   |                                          |
-|                  .                                                       .                                          |
-|                  .                                                       .                                          |
-|                  .                                                       .                                          |
+|     Gate          |                                          Gate         |                                         |
+|     subcircuit    |                                          subcircuit   |                                         |
+|                   .                                                       .                                         |
+|                   .                                                       .                                         |
+|                   .                                                       .                                         |
 -----------------------------------------------------------------------------------------------------------------------
 ```
 To understand the difference, you need to realize that when the bases of your gate circuits from the previous section are closed (0V, which is _logic low_), the voltage on the output terminal is Vcc (5V, which is _logic high_). This is essentially the principle of operation of our basic logic gate design. Both variants above include a subcircuit called _pullup_. It contains the connection to Vcc which we need to switch to when there is no current flowing through our gate subcircuit (becase the base(s) is(are) at 0V). The two variants differ in whether our design includes the pullup subcircuit or is left to the load circuit to provide. This latter design is called _open collector_, as the gate circuit does not include the pullup subcircuit. Both designs exist in industry, though the former is more prevalent. It is also the design of our logic gate ICs.
