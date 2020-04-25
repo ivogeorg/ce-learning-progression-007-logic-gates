@@ -163,7 +163,7 @@ In the [repository](./), include:
 #### 1. Study
 
 ##### Logic gates in the lab kit
-The logic gates available in the [lab kit](https://docs.google.com/document/d/18IDsrQlZY_QkmWG7FFtGqd9M2S1wL8ShJrD00aHwBwQ/edit?usp=sharing) are listed in the [BOM](https://docs.google.com/document/d/18IDsrQlZY_QkmWG7FFtGqd9M2S1wL8ShJrD00aHwBwQ/edit#heading=h.o3s6rnopwwhc), with links to the datasheets also provided. _Note: You should do your own inspection of the exact part number of each chip, and perform your own search for the exact (or closest) datasheet. The part numbers have the general form XX74YYDDDZ, where XX is the optional family prefix, YY is the logic type, DD/DDD is the gate code, and Z is an optional suffix (see the table below). While most of these IC packages have the **V<sub>CC</sub>** pin in the top-right corner (when properly oriented with the notch up toward the breadboard power supply) and **GND** in the bottom-left corner, you should double check. There might be different chips that provide the same logic gates, so you should make sure you have the datasheet for each one._
+The logic gates available in the [lab kit](https://docs.google.com/document/d/18IDsrQlZY_QkmWG7FFtGqd9M2S1wL8ShJrD00aHwBwQ/edit?usp=sharing) are listed in the [BOM](https://docs.google.com/document/d/18IDsrQlZY_QkmWG7FFtGqd9M2S1wL8ShJrD00aHwBwQ/edit#heading=h.o3s6rnopwwhc), with links to the datasheets also provided. _Note: You should do your own inspection of the exact part number of each chip, and perform your own search for the exact (or closest) datasheet. The part numbers have the general form XX74YYDDDZ, where XX is the optional family prefix, YY is the logic type, DD/DDD is the gate code, and Z is an optional suffix (see the table below, as well as more details on [Wikipedia](https://en.wikipedia.org/wiki/7400-series_integrated_circuits#Part_numbering)). While most of these IC packages have the **V<sub>CC</sub>** pin in the top-right corner (when properly oriented with the notch up toward the breadboard power supply) and **GND** in the bottom-left corner, you should double check. There might be different chips that provide the same logic gates, so you should make sure you have the datasheet for each one._
 
 A | B | NOT (04) | AND (08) | OR (32) | NAND (00) | XOR (86) | XNOR (135)
 --- | --- | --- | --- | --- | --- | --- | --- 
@@ -218,7 +218,7 @@ The contents of the datasheets are going to be similar to the [D-type positive-e
 Despite the simplicity of the logic gates on the functional level, the underlying circuits may be fairly complex. 
 
 ![alt text](images/and-gate-circuit-schematic.png "And gate circuit schematic")
-Circuit schematic of the AND gate [SN74LS08](http://www.ti.com/lit/ds/symlink/sn74ls08.pdf) implemented in TTL.
+Circuit schematic of the AND gate [SN74LS08](http://www.ti.com/lit/ds/symlink/sn74ls08.pdf) implemented in TTL. The elements with the bent vertical bars in their symbols are [Zener diodes](https://en.wikipedia.org/wiki/Zener_diode) and [Schottky transistors](https://en.wikipedia.org/wiki/Schottky_transistor).
 
 If the first look at the schematic is bewildering, you should bear in mind that the technology is developed over time, with new discoveries and developments being incorporated continuously into the available products until they have reached their present-day complesity. Here is a short article on [TTL logic](https://www.elprocus.com/transistor-transistor-logic-ttl/), one of the most widely used electronic technologies. To take a look into the deeper complexities and benefits of the underlying circuit design and implementation, you can peruse [these slides on DTL and TTL](materials/DTL-and-TTL-Slides.pdf). There have been hundreds of thousands of _patents_ generated along the way. This said, the gates included in our lab kit use 30-40 year old technology.
 
@@ -296,21 +296,59 @@ In the [repository](./), include:
 ### Section 5: Logic analyzer on the micro:bit (IN PROGRESS)
 
 #### 1. Study
-- more than two inputs
-  - show selections of 74LS family
-  - truth tables for a selection of multi-input gates
-  - multi-input by cascading 2-input gates
+
+##### Multi-input gates
+Logic gates do not have to have only 2 inputs. While multi-input gates are rarer than the canonical 2-input ones, there are uses in [multi-bit computational components](https://en.wikipedia.org/wiki/List_of_7400-series_integrated_circuits) for which they are perfect. 
+
+For example, let's look at the datasheet for an [8-input NAND gate](http://www.ti.com/lit/ds/symlink/sn74ls30.pdf?ts=1587846989650). Things to notice:
+1. The truth table is non-exhaustive, instead providing an abstract description of the function.
+
+| Inputs A through H | Output Y |
+:---: | :---:
+All inputs H | L
+One or more inputs L | H
+
+2. The TTL implementation is a simple extension of the 2-input NAND.
+
+| 2-input AND | 8-input NAND |
+:---: | :---:
+![](images/and-gate-circuit-schematic.png) | ![](images/8-input-nand-gate-ttl-schematic.png)
+
+3. The Boolean expression is a simple extension of the 2-input version.
+
+##### Truth table as functional definition of combinational circuits
+
+**TODO**
+
+- truth table as a definition of needed combinational circuit
 
 - minimization and a glimpse of Karnaugh maps: examples, when Karnaugh works and when it doesn't
   - every function of two inputs and one output can be minimized
   - show half-adder Cout and S?
 
 #### 2. Apply
-- write a logic verifier program for the micro:bit
-  - 3+1 columns: A, B, gate1, gate2
-  - apply the inputs, read and display the outputs, then identify (e.g. NOR, NAND, No name) 
-  - (challenge) Boolean expression, if no canonical gate name
-- drive the multiplexor of the XOR/XNOR gate and verify through operation
+1. Show the truth/functional table of an 8-input NOR gate, in two ways:
+   1. Exhaustively, with all rows and columns.
+   2. Abstractly, with 2 columns and 3 rows.
+2. Show the truth/functional table of a 8-input XOR gate, in two ways:
+   1. Exhaustively, with all rows and columns.
+   2. Abstractly, with 2 columns and 3 rows.
+3. Using the rules of Boolean algebra, prove the 8-input NAND gate expression from the [74LS30](http://www.ti.com/lit/ds/symlink/sn74ls30.pdf?ts=1587846989650). Assume the 2-input NAND expressions <img src="https://render.githubusercontent.com/render/math?math=Y = \widebar{AB}"> and <img src="https://render.githubusercontent.com/render/math?math=Y = \bar{A} %2b \bar{B}"> as _axiomatic_ (that is, you don't have to prove them).
+4. Write a _logic analyzer_ program for the micro:bit (for 2-input gates). It should be able to drive a gate, read its ouputs, render them as a truth table on the LED matrix, identify the function, and display its name. Details:
+   1. Use the leftmost 2 columns of the LED matrix to represent the gate input permutations. Use brightness levels to represent 0 and 1, as done previously.
+   2. Leave the middle column blank for readability.
+   3. Use column 3 (0-indexed!) to show the gate outputs.
+   4. Prepare to use column 4 for the multiplexed XOR/XNOR gate's second function.
+   5. Define the proper digital input and digital ouput pins and run their lines through the voltage converter.
+   6. Drive the gate with the micro:bit and record its outputs.
+   7. Display the analysis as a slow loop, showing either inputs and outputs line-by-line or first the input columns and then the outputs line-by-line. _Note that you should display the full table, not line-by-line as in the previous sections. These are instructions for how it should be rendered as you apply the inputs and read the output._
+   8. Once the truth/functional table is complete, after a 2-sec pause, scroll the name of the gate/function.
+   9. Analyze all 2-input gates that are provided in the lab kit.
+   10. Build a combinational circuit for a NOR gate and analyze it.
+   11. Build a combinational circuit for which there is _no name_ and scroll `"No name"` on the analyzer. _Hint: Take a look at the preceiding task which asked you to list and identify all 4-bit output patterns for 2-input gates._
+5. Use the 4-th converter line to drive the multiplexor of the XOR/XNOR gate and analyze it, displaying the functions side by side and columns 3 and 4 of the LED matrix.
+6. **(challenge)** For the _no-name_ functions, scroll the equivalent Boolean expression for the output.
+7. **(challenge)** Expand the logic analyzer to 3-input gates (or combinational circuits).
 
 #### 3. Present
 - anwers to questions
