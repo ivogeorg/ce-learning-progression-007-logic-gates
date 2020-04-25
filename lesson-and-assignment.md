@@ -278,7 +278,7 @@ As we saw in the datasheets for the logic gates, gates have _propagation delays_
 5. Compose a combinational ciruit to build XOR out of {NAND}.
 6. Side-by-side, build the direct (1 gate) and combinational equivalent gate circuits. Verify that they have the same output:
    1. With an AND gate and an LED load circuit.
-   2. On the micro:bit, connecting the two outputs and lighting the two LEDs at (3, 0) and (4, 0) (while the inputs, driven by the micro:bit, are shown on (0, 0) and (1, 0), as in the preceding sections).
+   2. On the micro:bit, connecting the two outputs and lighting the two LEDs at (3, 0) and (4, 0) (while the inputs, driven by the micro:bit, are shown on (0, 0) and (1, 0), as in the preceding sections). Use brightness `5` for 0, and `255` for 1.
 
 #### 3. Present
 - writeup with derivations, truth tables
@@ -297,14 +297,11 @@ In the [repository](./), include:
 ### Section 5: Logic analyzer on the micro:bit (IN PROGRESS)
 
 #### 1. Study
-- truth table as a definition of a logic function
-- next to each other with 2 inputs: is there an output (function) that is missing?
 - more than two inputs
 - minimization and a glimpse of Karnaugh maps
-- multiplexors are a major element of combinational control ciruits.
 
 #### 2. Apply
-- write a logic verifier program for the micro:bit
+- write a logic verifier program for the micro:bit (3+1 columns: A, B, gate1, gate2)
 - it should identify and name the logic function of a gate IC or combination
 - drive the multiplexor of the XOR/XNOR gate and verify through operation
 
@@ -319,6 +316,7 @@ In the [repository](./), include:
 - synchronous vs asynchronous
 - ripple & delays
 - down schematic, up schematic, derive control
+- multiplexers are a major element of combinational control ciruits
 - different ways to build a multiplexer
 
 #### 2. Apply
