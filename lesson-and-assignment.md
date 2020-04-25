@@ -293,16 +293,23 @@ In the [Lab Notebook](README.md), include:
 In the [repository](./), include:
 1. File `microbit-program-4-2-6.js` with the code you used in task 4.2.6.
 
-
 ### Section 5: Logic analyzer on the micro:bit (IN PROGRESS)
 
 #### 1. Study
 - more than two inputs
-- minimization and a glimpse of Karnaugh maps
+  - show selections of 74LS family
+  - truth tables for a selection of multi-input gates
+  - multi-input by cascading 2-input gates
+
+- minimization and a glimpse of Karnaugh maps: examples, when Karnaugh works and when it doesn't
+  - every function of two inputs and one output can be minimized
+  - show half-adder Cout and S?
 
 #### 2. Apply
-- write a logic verifier program for the micro:bit (3+1 columns: A, B, gate1, gate2)
-- it should identify and name the logic function of a gate IC or combination
+- write a logic verifier program for the micro:bit
+  - 3+1 columns: A, B, gate1, gate2
+  - apply the inputs, read and display the outputs, then identify (e.g. NOR, NAND, No name) 
+  - (challenge) Boolean expression, if no canonical gate name
 - drive the multiplexor of the XOR/XNOR gate and verify through operation
 
 #### 3. Present
