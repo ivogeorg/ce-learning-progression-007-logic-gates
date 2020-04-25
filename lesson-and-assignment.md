@@ -196,14 +196,21 @@ The contents of the datasheets are going to be similar to the [D-type positive-e
       ------------------|                   /
                         |-----------------/
       ```
-   4. The different packages are shown and their pinouts. _You should make sure you are looking at the right package!_
-   5. Optionally, the underlying circuit schematic is shown.
+   4. Usually next to the symbol, the _Boolean algebra_ expression of the logic function of the gate is shown. For example, the following is the expression for the OR gate:
+      ```
+                  _____
+                  _   _
+      Y = A + B = A + B
+      ```
+      The remarkable property of Boolean algebra to describe precisely logical function makes it so important for electronics. More on this in the next section.
+   5. The different packages are shown and their pinouts. _You should make sure you are looking at the right package!_
+   6. Optionally, the underlying circuit schematic is shown.
       1. You may notice that none of our gates have open collector outputs. Instead, they have _totem-pole_ outputs.
-   6. The timing diagrams are shown. They contain, among other parameters:
+   7. The timing diagrams are shown. They contain, among other parameters:
       1. The signal propagation time.
       2. The switching speed.
       3. The trigger levels.
-   7. Various other physical and electrical operating characteristics are specified. Some of those are:
+   8. Various other physical and electrical operating characteristics are specified. Some of those are:
       1. Most importantly for us is the logic-high voltage, which for our gates is 5V.
       2. Load drive capabilities.
 
@@ -243,8 +250,14 @@ In the [repository](./), include:
 ### Section 4: Combinational logic (IN PROGRESS)
 
 #### 1. Study
+
+##### Boolean algebra, logic gates, and truth tables
 - another pass of Boolean algebra and truth tables
+
+##### Functional sets
 - functional sets: OR+NOT, AND+NOT, NAND, NOR
+
+##### Combinational logic
 - combinational logic: vs sequential, propagation delay, logic minimization/simplification
 
 #### 2. Apply
@@ -259,7 +272,7 @@ In the [repository](./), include:
 - videos of circuits operating
 - programs used
 
-### Section 5: Truth table on the micro:bit (IN PROGRESS)
+### Section 5: Logic analyzer on the micro:bit (IN PROGRESS)
 
 #### 1. Study
 - truth table as a definition of a logic function
@@ -325,15 +338,6 @@ In the [repository](./), include:
 - if it can't fit, remove one flip-flop chip, and do 0-1-2-**3**-2-1-0-1-**2**-1-0-... (opens up a control signal from micro:bit)
   - with gates
   - programmatically
-
-1. Build a [_combinational circuit_](https://www.electronics-tutorials.ws/combination/comb_1.html) out of [_logic gate_](https://en.wikipedia.org/wiki/Logic_gate) [ICs](https://en.wikipedia.org/wiki/List_of_7400-series_integrated_circuits) (AND, OR, NOT, etc.) to drive one of the control signals to change your circuit from a mod-8 counter to a **mod-5 counter**:
-   1. Design the signal necessary to force the counter to cycle back to `000` before it reaches `101`.
-   2. Ask staff for the logic gates you need. _We have a variety of [74LS00 chips](https://en.wikipedia.org/wiki/List_of_7400-series_integrated_circuits)._
-   3. Build the circuit. _Note: Don't forget to power and ground the ICs._
-2. Record a video showing mod-5 counting and link in README.
-3. Now disconnect the combinatorial circuit and modify your program to do the same thing with the clear control signal that comes from the micro:bit.
-4. Commit to your repository as file `mod-5-clr.js`.
-5. Record a video showing mod-5 counter without external logic gates, and link to README with a brief explanation of your code.
 
 #### 3. Present
 - diagrams, schematics, control circuit designs
