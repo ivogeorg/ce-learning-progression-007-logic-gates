@@ -281,10 +281,6 @@ As we saw in the datasheets for the logic gates, gates have _propagation delays_
    2. On the micro:bit, connecting the two outputs and lighting the two LEDs at (3, 0) and (4, 0) (while the inputs, driven by the micro:bit, are shown on (0, 0) and (1, 0), as in the preceding sections). Use brightness `5` for 0, and `255` for 1.
 
 #### 3. Present
-- writeup with derivations, truth tables
-- videos of circuits operating
-- programs used
-
 In the [Lab Notebook](README.md), include:
 1. A short narrative about the experiments, with answers to the questions in [Part 1](#functional-sets), and the table from 4.2.1.
 2. Symbolic diagrams of the combinational circuits from 4.2.2-4.2.5.
@@ -293,7 +289,7 @@ In the [Lab Notebook](README.md), include:
 In the [repository](./), include:
 1. File `microbit-program-4-2-6.js` with the code you used in task 4.2.6.
 
-### Section 5: Logic analyzer on the micro:bit (IN PROGRESS)
+### Section 5: Logic analyzer on the micro:bit
 
 #### 1. Study
 
@@ -338,10 +334,19 @@ The output values are determined by the rules of _addition_ in binary. For examp
 3. Row 5, for which the input expression (aka _minterm_) is <img src="https://render.githubusercontent.com/render/math?math=A\bar{B}\bar{C}">
 4. Row 8, for which the input expression (aka _minterm_) is <img src="https://render.githubusercontent.com/render/math?math=ABC">
 
-We can read this as "S is high when the input is either like row 2 OR like row 3 OR ...". This give us the following Boolean expression for S:
+We can read this as "S is high when the input is either like row 2 **OR** like row 3 **OR** ...". This gives us the following Boolean expression for S:
 
 <img src="https://render.githubusercontent.com/render/math?math=S = \bar{A}\bar{B}C %2b \bar{A}B\bar{C} %2b A\bar{B}\bar{C} %2b ABC">
 
+After some Boolean algebraic manipulation of this expression, we arrive at the _minimal_ expression:
+
+<img src="https://render.githubusercontent.com/render/math?math=S = A \oplus B \oplus C">
+
+and this can be built with two _cascaded_ XOR gates:
+
+![](https://3.bp.blogspot.com/-gv9JtyP240E/WANgshfPGrI/AAAAAAAAAts/vbNF9cZLBRY3-p3PYG3R5fmt7AzHsdVUwCK4B/s640/3%2Binput%2Bxor%2Bgate.png)
+
+We follow a similar procedure for the other output C<sub>OUT</sub>.
 
 #### 2. Apply
 1. Show the truth/functional table of an 8-input NOR gate, in two ways:
@@ -351,7 +356,9 @@ We can read this as "S is high when the input is either like row 2 OR like row 3
    1. Exhaustively, with all rows and columns.
    2. Abstractly, with 2 columns and 3 rows.
 3. Using the rules of Boolean algebra, prove the 8-input NAND gate expression from the [74LS30](http://www.ti.com/lit/ds/symlink/sn74ls30.pdf?ts=1587846989650). Assume the 2-input NAND expressions <img src="https://render.githubusercontent.com/render/math?math=Y = \widebar{AB}"> and <img src="https://render.githubusercontent.com/render/math?math=Y = \bar{A} %2b \bar{B}"> as _axiomatic_ (that is, you don't have to prove them).
-4. Write a _logic analyzer_ program for the micro:bit (for 2-input gates). It should be able to drive a gate, read its ouputs, render them as a truth table on the LED matrix, identify the function, and display its name. Details:
+4. Count the number of gates the _non-minimized_ expression for the sum ouptut S of the full adder. _What is the gate reduction factor of the minimal expression?_
+5. Derive the (i) sum-of-minterms, (ii) minimal expression, and (iii) logic gate implementation for the C<sub>OUT</sub> output of the full adder.
+6. Write a _logic analyzer_ program for the micro:bit (for 2-input gates). It should be able to drive a gate, read its ouputs, render them as a truth table on the LED matrix, identify the function, and display its name. Details:
    1. Use the leftmost 2 columns of the LED matrix to represent the gate input permutations. Use brightness levels to represent 0 and 1, as done previously.
    2. Leave the middle column blank for readability.
    3. Use column 3 (0-indexed!) to show the gate outputs.
@@ -363,14 +370,19 @@ We can read this as "S is high when the input is either like row 2 OR like row 3
    9. Analyze all 2-input gates that are provided in the lab kit.
    10. Build a combinational circuit for a NOR gate and analyze it.
    11. Build a combinational circuit for which there is _no name_ and scroll `"No name"` on the analyzer. _Hint: Take a look at the preceiding task which asked you to list and identify all 4-bit output patterns for 2-input gates._
-5. Use the 4-th converter line to drive the multiplexor of the XOR/XNOR gate and analyze it, displaying the functions side by side and columns 3 and 4 of the LED matrix.
-6. **CHALLENGE** For the _no-name_ functions, scroll the equivalent Boolean algebra output expression.
-7. **CHALLENGE** Expand the logic analyzer to 3-input gates (or combinational circuits).
+7. Use the 4-th converter line to drive the multiplexor of the XOR/XNOR gate and analyze it, displaying the functions side by side and columns 3 and 4 of the LED matrix.
+8. **CHALLENGE** For the _no-name_ functions, scroll the equivalent Boolean algebra output expression.
+9. **CHALLENGE** Expand the logic analyzer to 3-input gates (or combinational circuits).
 
 #### 3. Present
-- anwers to questions
-- programs written
-- videos of circuits operating
+In the [Lab Notebook](README.md), include:
+1. A short narrative about the experiments, including the tables for 5.2.1 and 5.2.2, the proof for 5.2.3, the answer to the question in 5.2.4, and the derivation and design from 5.2.5. _See how markdown tables are formatted in this document and use the format for your tables. Include the full derivation and a sketch of the C<sub>OUT</sub> circuit._ 
+2. Videos of the operating circuits from 5.2.6.
+3. Video of the operating circuit from 5.2.7.
+
+In the [repository](./), include:
+1. File `microbit-program-5-2-6.js` with the code you used in task 5.2.6.
+2. File `microbit-program-5-2-7.js` with the code you used in task 5.2.7.
 
 ### Section 6: Bi-directional 3-bit binary ripple counter (asynchronous) (IN PROGRESS)
 
