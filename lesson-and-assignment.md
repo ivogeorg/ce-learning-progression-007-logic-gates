@@ -1,4 +1,4 @@
-# CPE 1040 - Spring 2020 (IN PROGRESS)
+# CPE 1040 - Spring 2020
 
 Author: Ivo Georgiev, PhD  
 Last updated: 2020-04-25   
@@ -384,7 +384,7 @@ In the [repository](./), include:
 1. File `microbit-program-5-2-6.js` with the code you used in task 5.2.6.
 2. File `microbit-program-5-2-7.js` with the code you used in task 5.2.7.
 
-### Section 6: Bi-directional 3-bit binary ripple counter (asynchronous) (IN PROGRESS)
+### Optional section 6: Bi-directional 3-bit binary ripple counter (asynchronous) (IN PROGRESS)
 
 #### 1. Study
 - synchronous vs asynchronous
@@ -403,7 +403,7 @@ In the [repository](./), include:
 - program source
 - video
 
-### Section 7: Bi-directional synchronous circuits (IN PROGRESS)
+### Optional section 7: Bi-directional synchronous circuits (IN PROGRESS)
 
 #### 1. Study
 - pros and cons of synchronous and asynchronous (not just counters)
@@ -419,7 +419,7 @@ In the [repository](./), include:
 - programs
 - videos
 
-### Section 8: Synchronous modulo counters (IN PROGRESS)
+### Optional section 8: Synchronous modulo counters (IN PROGRESS)
 
 #### 1. Study
 - encoding and decoding
