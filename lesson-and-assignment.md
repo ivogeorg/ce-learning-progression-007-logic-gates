@@ -198,9 +198,9 @@ The contents of the datasheets are going to be similar to the [D-type positive-e
       ```
    4. Usually next to the symbol, the _Boolean algebra_ expression of the logic function of the gate is shown. For example, the following is the expression for the OR gate:
       ```
-                  _____
-                  _   _
-      Y = A + B = A + B
+                  ___
+                  _ _
+      Y = A + B = A B
       ```
       The remarkable property of Boolean algebra to describe precisely logical function makes it so important for electronics. More on this in the next section.
    5. The different packages are shown and their pinouts. _You should make sure you are looking at the right package!_
