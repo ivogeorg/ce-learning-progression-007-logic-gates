@@ -1,7 +1,7 @@
 # CPE 1040 - Spring 2020 (IN PROGRESS)
 
 Author: Ivo Georgiev, PhD  
-Last updated: 2020-04-23   
+Last updated: 2020-04-24   
 Code: 9acff7cc344309ac25976869a50535751d4b970d      
 
 ![alt text](images/CPE-Asst6-Modulo-Ctr.jpg "Final circuit for CPE 1040 Asst 6")
@@ -247,30 +247,52 @@ In the [repository](./), include:
 1. File `microbit-program-3-2-2.js` with the code you used in task 3.2.2.
 2. File `microbit-program-3-2-3.js` with the code you used in task 3.2.3.
 
-### Section 4: Combinational logic (IN PROGRESS)
+### Section 4: Combinational logic
 
 #### 1. Study
 
 ##### Boolean algebra, logic gates, and truth tables
-- another pass of Boolean algebra and truth tables
+Boolean algebra, logic gates, and truth tables describe the same thing, namely, the fundamental operations on 2-valued data, and, as an extension, the fundamental rules of computation in the binary number system. Boolean algebra is the _mathematical_ representation. Logic gates are the _functional_ representation. Truth tables are the _mapping_ representation. All three are _equivalent_ and _isomorphic_ to each other. Knowing all 3 aspects creates a dense, stable, and satisfying knowledge network, which is right in the heart of computing!
 
 ##### Functional sets
-- functional sets: OR+NOT, AND+NOT, NAND, NOR
+The beauty of equivalence goes even further, with gates being able to be implemented by other gates. A _minimal set of gates_ which is sufficient to represent all other gates is called a _functional set_. This means that we can represent every other gate with the gates from the functional set. Here are 4 different functional sets:
+  1. {OR. NOT}
+  2. {AND, NOT)
+  3. {NAND}
+  4. {NOR}
+
+As a throught experiment, think about the 4 output values that define a function in a truth table. Each permutation of 4 bits (1-or-0s!) defines a different function, can be expressed with a Boolean algebra formula, and can be built by a functional set. _How many such different functions are there? What are their Boolean expressions? For how many of these do we lack a special name (like AND, NAND, etc.)? What is the minimal set of functional-set gates that can represent them?_
 
 ##### Combinational logic
-- combinational logic: vs sequential, propagation delay, logic minimization/simplification
+Building gates out of _functional sets_ is essentially stringing gates together to create other functions. Elecrical and timing constraints aside, we can build arbitrarily complex circuits consisting only of gates, where intermediate outputs of gates are inputs to other gates, layer after layer. A circuit which is composed only of gates between its (outer) inputs and outputs is called [_combinational_](https://en.wikipedia.org/wiki/Combinational_logic). Combinational circuits are at the basis for computation.
+
+Combinational circuits are most often contrasted with _sequential_ circuits, which we met in the previous assignment, where we worked with the D-flip-flop and built counters out of it. Both the flip-flop and the counters are sequential circuits, and therefore have multiple stable states and thus memory. The output of a combinatorial circuit depends _only on its inputs_ and the the output is the same for the same inputs. The output of a sequential circuit depends _on its inputs and its current state_ and, because of this second dependencey, may produce different outputs for the same inputs, at different times. Sequential circuits are thus said to depend on time, and particularly on the past. [Sequential circuits](https://www.electronics-tutorials.ws/sequential/seq_1.html) are usually implemented as a combinational component and a memory (aka storage) component, in a tight cycle.
+
+As we saw in the datasheets for the logic gates, gates have _propagation delays_. This delay is _additive_ in combinational circuits. The delay of a combinational circuit (aka its _latency_) is the longest time it takes an input signal to propage along a path throught the combinational circuit to reach its output. Because of the cyclical structure of sequential circuit, the _latency_ of the combinational component limits the frequency (speed) of operation of the whole system, and is thus a fundamental design constraint and tradeoff. Simplification of the combinational circuit and/or minimization of the gates while achieving the same overall function is one of the most common tasks in computer engineering.
 
 #### 2. Apply
-- compose combinational ciruits to build AND out of OR+NOT, OR out of AND+NOT
-- compose combinational ciruits to build AND, OR, and NOT out of NAND
-- compose combinational ciruits to build XOR out of NAND
-- build direct and combinational next to each other and verify same output: (i) with an AND gate and an LED load, (ii) micro:bit
-- drive with the micro:bit (input signals)
+1. Create a table, listing all the 4-bit output permutations of inputs `00`, `01`, `10`, and `11`. If there is a gate for the permutation (e.g. `0001` is an AND), state it; otherwise, compose it of gates from one of the functional sets. Write the Boolean expression (e.g. AB for `0001`).
+2. Compose a combinational ciruit to build AND out of {OR, NOT}.
+3. Compose a combinational circuit to build OR out of {AND, NOT}.
+4. Compose combinational ciruits to build AND, OR, and NOT out of {NAND}.
+5. Compose a combinational ciruit to build XOR out of {NAND}.
+6. Side-by-side, build the direct (1 gate) and combinational equivalent gate circuits. Verify that they have the same output:
+   1. With an AND gate and an LED load circuit.
+   2. On the micro:bit, connecting the two outputs and lighting the two LEDs at (3, 0) and (4, 0) (while the inputs, driven by the micro:bit, are shown on (0, 0) and (1, 0), as in the preceding sections).
 
 #### 3. Present
 - writeup with derivations, truth tables
 - videos of circuits operating
 - programs used
+
+In the [Lab Notebook](README.md), include:
+1. A short narrative about the experiments, with answers to the questions in [Part 1](#functional-sets), and the table from 4.2.1.
+2. Symbolic diagrams of the combinational circuits from 4.2.2-4.2.5.
+3. Videos of the operating circuits from 4.2.6. (One with LED load and one with the micro:bit).
+
+In the [repository](./), include:
+1. File `microbit-program-4-2-6.js` with the code you used in task 4.2.6.
+
 
 ### Section 5: Logic analyzer on the micro:bit (IN PROGRESS)
 
