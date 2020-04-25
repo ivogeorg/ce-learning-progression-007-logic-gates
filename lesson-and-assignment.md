@@ -316,15 +316,32 @@ One or more inputs L | H
 
 3. The Boolean expression is a simple extension of the 2-input version.
 
-##### Truth table as functional definition of combinational circuits
+##### Truth table as functional definition of an arbitrary combinational circuit
+For complex combinational circuits, the truth table format is the choice for functional definition. Any arbitrary function of multiple inputs and outputs can be represented as a truth table, after which the logic can be designed, optimized, and implemented. The equivalence of the truth tables, Boolean expressions, and logic gates affords this elegant process.
 
-**TODO**
+As an example, what follows is the table of the _full adder_, a circuit that adds 2 1-bit inputs and a _carry C<sub>IN</sub>, and outputs a 1-bit _sum S_ and a 1-bit _carry out C<sub>OUT</sub>_. So, this can be thought of as a 3-input 2-outpu combinational circuit.
 
-- truth table as a definition of needed combinational circuit
+Row | A | B | C<sub>IN</sub> | C<sub>OUT</sub> | S
+--- | --- | --- | --- | --- | ---
+1 |0 | 0 | 0 | 0 | 0
+2 | 0 | 0 | 1 | 0 | 1
+3 | 0 | 1 | 0 | 0 | 1
+4 | 0 | 1 | 1 | 1 | 0
+5 | 1 | 0 | 0 | 0 | 1
+6 | 1 | 0 | 1 | 1 | 0
+7 | 1 | 1 | 0 | 1 | 0
+8 | 1 | 1 | 1 | 1 | 1
 
-- minimization and a glimpse of Karnaugh maps: examples, when Karnaugh works and when it doesn't
-  - every function of two inputs and one output can be minimized
-  - show half-adder Cout and S?
+The output values are determined by the rules of _addition_ in binary. For example, `1 + 0 + 1 = 10` in the 6-th row. So, now that we have the inputs and the outputs, how do we design the circuit? For each of the outputs, we look at the rows containing 1 and create the _sum-of-minterms_ expression. For example, there are 4 rows with 1 inside for S (for simplicity, we are using C for C<sub>IN</sub>):
+1. Row 2, for which the input expression (aka _minterm_) is <img src="https://render.githubusercontent.com/render/math?math=\bar{A}\bar{B}C">
+2. Row 3, for which the input expression (aka _minterm_) is <img src="https://render.githubusercontent.com/render/math?math=\bar{A}B\bar{C}">
+3. Row 5, for which the input expression (aka _minterm_) is <img src="https://render.githubusercontent.com/render/math?math=A\bar{B}\bar{C}">
+4. Row 8, for which the input expression (aka _minterm_) is <img src="https://render.githubusercontent.com/render/math?math=ABC">
+
+We can read this as "S is high when the input is either like row 2 OR like row 3 OR ...". This give us the following Boolean expression for S:
+
+<img src="https://render.githubusercontent.com/render/math?math=S = \bar{A}\bar{B}C %2b \bar{A}B\bar{C} %2b A\bar{B}\bar{C} %2b ABC">
+
 
 #### 2. Apply
 1. Show the truth/functional table of an 8-input NOR gate, in two ways:
@@ -347,8 +364,8 @@ One or more inputs L | H
    10. Build a combinational circuit for a NOR gate and analyze it.
    11. Build a combinational circuit for which there is _no name_ and scroll `"No name"` on the analyzer. _Hint: Take a look at the preceiding task which asked you to list and identify all 4-bit output patterns for 2-input gates._
 5. Use the 4-th converter line to drive the multiplexor of the XOR/XNOR gate and analyze it, displaying the functions side by side and columns 3 and 4 of the LED matrix.
-6. **(challenge)** For the _no-name_ functions, scroll the equivalent Boolean expression for the output.
-7. **(challenge)** Expand the logic analyzer to 3-input gates (or combinational circuits).
+6. **CHALLENGE** For the _no-name_ functions, scroll the equivalent Boolean algebra output expression.
+7. **CHALLENGE** Expand the logic analyzer to 3-input gates (or combinational circuits).
 
 #### 3. Present
 - anwers to questions
