@@ -404,7 +404,7 @@ The output values are determined by the rules of _addition_ in binary. For examp
 3. Row 5, for which the input expression (aka _minterm_) is <img src="https://render.githubusercontent.com/render/math?math=A\bar{B}\bar{C}">
 4. Row 8, for which the input expression (aka _minterm_) is <img src="https://render.githubusercontent.com/render/math?math=ABC">
 
-We can read this as "S is high when the input is either like row 2 **OR** like row 3 **OR** ...". This gives us the following Boolean expression for S:
+We can read this as: _S is high when the input is either like row 2 **OR** like row 3 **OR** ..._. This gives us the following Boolean expression for S:
 
 <img src="https://render.githubusercontent.com/render/math?math=S = \bar{A}\bar{B}C %2b \bar{A}B\bar{C} %2b A\bar{B}\bar{C} %2b ABC">
 
@@ -441,7 +441,7 @@ We follow a similar procedure for the other output C<sub>OUT</sub>.
    10. Build a combinational circuit for a NOR gate and analyze it.
    11. Build a combinational circuit for which there is _no name_ and scroll `"No name"` on the analyzer. _Hint: Take a look at the preceiding task which asked you to list and identify all 4-bit output patterns for 2-input gates._
 7. Use the 4-th converter line to drive the multiplexor of the XOR/XNOR gate and analyze it, displaying the functions side by side and columns 3 and 4 of the LED matrix.
-8. **CHALLENGE** For the _no-name_ functions, scroll the equivalent Boolean algebra output expression. _Guide: If you lay out the outputs of the function horizontally as a bit pattern, you can interpret it as a binary number. Why are they all unique? Have a unique number for each item automoatically gives you an **index**. You can use this index in the data structure you will use to hold the logic gate names. For the logic functions without names, the "output bit pattern" can be used to generate the **minterm expression**, by picking the minterms that correspond to 1s. In fact, this can be done for all 2-input logical functions whether or not they have canonical gate names._
+8. **CHALLENGE** For the _no-name_ functions, scroll the equivalent Boolean algebra output expression. _Guide: If you lay out the outputs of the function horizontally as a bit pattern (e.g. 0001 for AND), you can interpret it as a 4-bit binary number. Why are they all unique? Having a unique number for each item automoatically gives you an **index**. You can use this index in the data structure you will use to hold the logic gate names. For the logic functions without names, the "output bit pattern" can be used to generate the **minterm expression**, by picking the minterms that correspond to 1s. In fact, this can be done for all 2-input logical functions whether or not they have canonical gate names._
 9. **CHALLENGE** Expand the logic analyzer to 3-input gates (and combinational circuits).
 
 #### 3. Present
