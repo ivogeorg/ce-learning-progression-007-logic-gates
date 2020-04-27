@@ -1,7 +1,7 @@
 # CPE 1040 - Spring 2020
 
 Author: Ivo Georgiev, PhD  
-Last updated: 2020-04-25   
+Last updated: 2020-04-26   
 Code: 9acff7cc344309ac25976869a50535751d4b970d      
 
 ![alt text](images/CPE-Asst6-Modulo-Ctr.jpg "Final circuit for CPE 1040 Asst 6")
@@ -466,9 +466,13 @@ Our asychronous counter is also called a _ripple_ counter. What makes it asynchr
 
 Recall that logic gates have a _delay_ between the input and output, which we called a _propagation delay_. It's the time the signal takes to propagate through the circuit from input to output. Our flip-flops also have delays, in fact larger ones than the logic gates, because flip-flops are _stateful_ devices and need to _switch_ between one stable state (say, 0) to the other (in this case, 1). Switching always adds extra delays. For example, compare the _switching charecteristics_ section of the [74LS08 AND gate](http://www.ti.com/lit/ds/symlink/sn74ls08.pdf?ts=1587949352102) (12-19 ns) and the [74LS74 D-type flip-flop](http://www.ti.com/lit/ds/symlink/sn74ls74a.pdf?ts=1587949244609) (20-40 ns).
 
-Because our counter is asynchronous, the driving signal, which starts from the clock input for the _b<sub>0</sub>_ flip-flop, incurs an extra flip-flop delay with each flip-flop it propagates through. This is the _ripple_ effect that gives our counter its alternative name. In our counter, in comparison to a synchrounous counter, where all flip-flops receive the same CLK signal, the changes in the bits also exhibit the ripple, where in a synchronous counter the bits will all change _at the same time_.
+Because our counter is asynchronous, the driving signal, which starts from the clock input for the _b<sub>0</sub>_ flip-flop, incurs an extra flip-flop delay with each flip-flop it propagates through. This is the [_ripple_](https://www.electronicshub.org/asynchronous-counter/#What_is_clock_ripple) effect that gives our counter its alternative name. In our counter, in comparison to a synchrounous counter, where all flip-flops receive the same CLK signal, the changes in the bits also exhibit the ripple, where in a synchronous counter the bits will all change _at the same time_.
 
 ##### Down counter & up counter
+The counter we built in the previous assignment is a _down_ counter. It counts from its highest value down to 0, indefinitely while there is a driving clock signal. To make it count _up_, we need only to change the wiring of the ripple signal (that is, the _pseudo-clock_). Look at the following sketch:
+
+
+
 - down schematic, up schematic, derive control
 
 ##### Multiplexers
