@@ -51,7 +51,7 @@ Table of Contents
         * [Truth table as functional definition of an arbitrary combinational circuit](#truth-table-as-functional-definition-of-an-arbitrary-combinational-circuit)
       * [2\. Apply](#2-apply-4)
       * [3\. Present](#3-present-4)
-    * [Optional section 6: Bi\-directional 3\-bit binary ripple counter (asynchronous)](#optional-section-6-bi-directional-3-bit-binary-ripple-counter-asynchronous)
+    * [Optional section 6: Bi\-directional binary ripple counter (asynchronous)](#optional-section-6-bi-directional-binary-ripple-counter-asynchronous)
       * [1\. Study](#1-study-5)
       * [2\. Apply](#2-apply-5)
       * [3\. Present](#3-present-5)
