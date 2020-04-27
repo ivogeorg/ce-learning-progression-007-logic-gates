@@ -367,7 +367,7 @@ In the [repository](./), include:
 Logic gates do not have to have only 2 inputs. While multi-input gates are rarer than the canonical 2-input ones, there are uses in [multi-bit computational components](https://en.wikipedia.org/wiki/List_of_7400-series_integrated_circuits) for which they are perfect. 
 
 For example, let's look at the datasheet for an [8-input NAND gate](http://www.ti.com/lit/ds/symlink/sn74ls30.pdf?ts=1587846989650). Things to notice:
-1. The truth table is non-exhaustive, instead providing an abstract description of the function.
+1. The truth table is non-exhaustive, instead providing an abstract analytical description of the function.
 
 | Inputs A through H | Output Y |
 :---: | :---:
@@ -421,7 +421,7 @@ We follow a similar procedure for the other output C<sub>OUT</sub>.
 #### 2. Apply
 1. Show the truth/functional table of an 8-input NOR gate, in two ways:
    1. Exhaustively, with all rows and columns.
-   2. Abstractly, with 2 columns and 3 rows.
+   2. Abstractly/analytically, with 2 columns and 3 rows.
 2. Show the truth/functional table of a 8-input XOR gate, in two ways:
    1. Exhaustively, with all rows and columns.
    2. Abstractly, with 2 columns and 3 rows.
@@ -454,19 +454,31 @@ In the [repository](./), include:
 1. File `microbit-program-5-2-6.js` with the code you used in task 5.2.6.
 2. File `microbit-program-5-2-7.js` with the code you used in task 5.2.7.
 
-### Optional section 6: Bi-directional 3-bit binary ripple counter (asynchronous) (IN PROGRESS)
+### Optional section 6: Bi-directional binary ripple counter (asynchronous) (IN PROGRESS)
 
 #### 1. Study
-- synchronous vs asynchronous
-- ripple & delays
+
+##### Synchronous vs asynchronous systems
+One of the primary design considerations in computer systems and components is whether the system or subsystem is _synchronous_ or _asynchrounous_. Synchrounous means _in step_, _in time_, _at the same time_, but can also mean _at a predictable and/or regular time(s)_. Synchronous systems are usually _centrally timed_ (e.g. by a clock signal) and conform to the timing sygnal. Asynchronous systems, on the other hand, are not centrally timed and execute _as soon as possible_ without waiting for other events or components to sync with. The synchronous-vs-asynchronous topic in computer systems is vast and appears at many levels and in many different design problems. Our introductory intuition-building example is our 3-bit counter, which can be built as both an asynchrounous system and a synchronous system. We built the asynchronous version in the previous assignment. In this section, we'll extend it, and in the subsequent sections we will build the synchronous version as well as other synchronous circuits.
+
+##### Ripple & propagation delay
+Our asychronous counter is also called a _ripple_ counter. What makes it asynchronous is that the clock signal only drives the flip-flop for the least-significant bit _b<sub>0</sub>_, whereas _b<sub>1</sub>_ and _b<sub>2</sub>_ receive their "clock" signal from one of the outputs of the preceding flip-flop. As each flip-flop _divides_ the frequency of the preceding flip-flop _(How and why does it do that?)_, there is no single central clock signal that drives the whole system. Thus, the flip-flops of the counter are driven _asynchrounously_.
+
+Recall that logic gates have a _delay_ between the input and output, which we called a _propagation delay_. It's the time the signal takes to propagate through the circuit from input to output. Our flip-flops also have delays, in fact larger ones than the logic gates, because flip-flops are _stateful_ devices and need to _switch_ between one stable state (say, 0) to the other (in this case, 1). Switching always adds extra delays. For example, compare the _switching charecteristics_ section of the [74LS08 AND gate](http://www.ti.com/lit/ds/symlink/sn74ls08.pdf?ts=1587949352102) (12-19 ns) and the [74LS74 D-type flip-flop](http://www.ti.com/lit/ds/symlink/sn74ls74a.pdf?ts=1587949244609) (20-40 ns).
+
+Because our counter is asynchronous, the driving signal, which starts from the clock input for the _b<sub>0</sub>_ flip-flop, incurs an extra flip-flop delay with each flip-flop it propagates through. This is the _ripple_ effect that gives our counter its alternative name. In our counter, in comparison to a synchrounous counter, where all flip-flops receive the same CLK signal, the changes in the bits also exhibit the ripple, where in a synchronous counter the bits will all change _at the same time_.
+
+##### Down counter & up counter
 - down schematic, up schematic, derive control
+
+##### Multiplexers
 - multiplexers are a major element of combinational control ciruits
 - different ways to build a multiplexer
 
 #### 2. Apply
-- remove the MSB of the counter to free a converter channel
-- built a multiplexer from gates
-- drive the selector from the micro:bit
+- remove the MSB of the counter to free up a converter channel
+- build a multiplexer from gates (e.g. 4 NAND gates)
+- drive the selector from the micro:bit (e.g. toggle a button)
 
 #### 3. Present
 - design writeup, including truth table
