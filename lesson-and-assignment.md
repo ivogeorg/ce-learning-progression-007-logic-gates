@@ -454,7 +454,7 @@ In the [repository](./), include:
 1. File `microbit-program-5-2-6.js` with the code you used in task 5.2.6.
 2. File `microbit-program-5-2-7.js` with the code you used in task 5.2.7.
 
-### Optional section 6: Bi-directional binary ripple counter (asynchronous) (IN PROGRESS)
+### Optional section 6: Bi-directional binary ripple counter (asynchronous)
 
 #### 1. Study
 
@@ -477,11 +477,11 @@ The counter we built in the previous assignment is a _down_ counter. It counts f
 ##### Multiplexers
 What we need to do for our up-down counter is use a single-line control signal to switch between the two counting directions. We have already seen such functionality before. _Where? Which circuit?_
 
-Devices which have control lines the values of which perform an _exclusive_ selection of on output from a set of different inputs, are called _multiplexers_. Multiplexors are, in fact, nothing more than electrical switches. Where as the transistor is an electrical switch that is _either on or off_, multiplexors are _always on but can switch between different outputs_. In a household analogy, the transistor is like an on-off light switch, whereas the multiplexer is your security system which has three different modes: Stay, Away, and Night. _(Of course, you can turn it off completely, but you get the point.)_
+Devices which have control lines the values of which perform an _exclusive_ selection of on output from a set of different inputs, are called [_multiplexers_](https://www.electronics-tutorials.ws/combination/comb_2.html). Multiplexors are, in fact, nothing more than electrical switches. Where as the transistor is an electrical switch that is _either on or off_, multiplexors are _always on but can switch between different outputs_. In a household analogy, the transistor is like an on-off light switch, whereas the multiplexer is your security system which has three different modes: Stay, Away, and Night. _(Of course, you can turn it off completely, but you get the point.)_
 
 The symbol for the simplest multiplexer looks like this:
 ```
-                   Selector
+        Selector ------
                       |
                       |
                 |-----------|
@@ -495,23 +495,27 @@ _(Remember that the signals flow from left to right.)_ This is a called a _2-to-
 2. _Does a multiplexer have state? Depending on your answer, is a multiplexor a sequential or a combinational circuit?_
 3. Notice that a 1-bit selector can multiplex between 2 inputs. Let's generalize this. _How many control lines would you need for a _4-to-1_ multiplexer? What about for a _8-to-1_ multiplexer? What about for a _5-to-1_ multiplexer? What about for an N-input multiplexor, where N is an exact power of 2? What about for an M-input multiplexor, where M is **not** an exact power of 2?_
 
-Multiplexers are a fundamental element of control ciruits in processors.
+Multiplexers are a fundamental element of _control_ ciruits in [processors](https://en.wikipedia.org/wiki/Computer_architecture) and _[bus](https://en.wikipedia.org/wiki/Bus_(computing))_ switch hubs, among others.
 
-##### Multiplexer out of gates
-While a multiplexer is not a logic gate itself, it can be built out of logic gates.
+##### Multiplexer out of logic gates
+While a multiplexer is not a logic gate itself, it can be built out of logic gates. Here are two different implementations:
+1. [4 NAND gates](https://www.electronics-tutorials.ws/combination/comb_2.html)   
+2. [2 AND, 1 OR, and 1 NOT gates](https://learn.sparkfun.com/tutorials/logicblocks-experiment-guide/all#7-2-to-1-multiplexer)   
 
-**TODO**
-
+While they are functionally equivalent, from the perspective of circuit real estate, the first one is more efficient than the second (1 IC vs 3 ICs). _Write the Boolean expressions for both circuits and show that they are equivalent._
 
 #### 2. Apply
-- remove the MSB of the counter to free up a converter channel
-- build a multiplexer from gates (e.g. 4 NAND gates)
-- drive the selector from the micro:bit (e.g. toggle a button)
+1. We only have 4 voltage converter channels, so to add a control line, we need to open up a channel. Remove the MSB of the 3-bit counter. A 2-bit counter will be sufficient to demonstrate our up-down counter.
+2. Build a multiplexer out of logic gates.
+3. Modify your previous counter program to drive the selector from a digital output pin on the micro:bit by toggling a button. _Test the circuit. Does it switch its direction?_
 
 #### 3. Present
-- design writeup, including truth table
-- program source
-- video
+In the [Lab Notebook](README.md), include:
+1. A short narrative about the experiments, including answers to all the questions in 6.1 and 6.2.3, as well as any relevant discussion. 
+2. A short videos of the operating circuit from 6.2.3.
+
+In the [repository](./), include:
+1. File `microbit-program-6-2-3.js` with the code you used in task 6.2.3.
 
 ### Optional section 7: Bi-directional synchronous circuits (IN PROGRESS)
 
