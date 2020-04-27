@@ -469,7 +469,8 @@ Recall that logic gates have a _delay_ between the input and output, which we ca
 Because our counter is asynchronous, the driving signal, which starts from the clock input for the _b<sub>0</sub>_ flip-flop, incurs an extra flip-flop delay with each flip-flop it propagates through. This is the [_ripple_](https://www.electronicshub.org/asynchronous-counter/#What_is_clock_ripple) effect that gives our counter its alternative name. In our counter, in comparison to a synchrounous counter, where all flip-flops receive the same CLK signal, the changes in the bits also exhibit the ripple, where in a synchronous counter the bits will all change _at the same time_.
 
 ##### Down counter & up counter
-The counter we built in the previous assignment is a _down_ counter. It counts from its highest value down to 0, indefinitely while there is a driving clock signal. To make it count _up_, we need only to change the wiring of the ripple signal (that is, the _pseudo-clock_). Look at the following sketch:
+The counter we built in the previous assignment is a _down_ counter. It counts from its highest value down to 0, indefinitely while there is a driving clock signal. To make it count _up_, we need only to change the wiring of a single ripple signal. Read this detailed exploration of [ripple counters](https://www.electronicshub.org/asynchronous-counter/) and answer the following questions: 
+1. _
 
 
 
