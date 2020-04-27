@@ -13,7 +13,7 @@ Table of Contents
 
 * [CPE 1040 \- Spring 2020](#cpe-1040---spring-2020)
   * [Take\-home lab kit](#take-home-lab-kit)
-  * [Learning how to learn](#learning-how-to-learn)
+  * [Learning how to learn](#learning-how-to-learn)   
         * [Learning How to Learn 03](#learning-how-to-learn-03)
   * [Lesson &amp; Assignment 007: Logic gates (IN PROGRESS)](#lesson--assignment-007-logic-gates-in-progress)
     * [Section 1: AND, OR, and NOT gates from NPN transistors](#section-1-and-or-and-not-gates-from-npn-transistors)
@@ -470,15 +470,38 @@ Because our counter is asynchronous, the driving signal, which starts from the c
 
 ##### Down counter & up counter
 The counter we built in the previous assignment is a _down_ counter. It counts from its highest value down to 0, indefinitely while there is a driving clock signal. To make it count _up_, we need only to change the wiring of a single ripple signal. Read this detailed exploration of [ripple counters](https://www.electronicshub.org/asynchronous-counter/) and answer the following questions: 
-1. _
-
-
-
-- down schematic, up schematic, derive control
+1. _What differences between the down-counter and up-counter circuits can you spot?_
+2. _Why does the down-counter count down while the up-counnter count up? Draw the timing diagram of the two circuits and reason why/how each cicuit produces its diagram._
+3. _Based on your analysis, if we want to have a switchable up-down counter in one circuit, what should do?_
 
 ##### Multiplexers
-- multiplexers are a major element of combinational control ciruits
-- different ways to build a multiplexer
+What we need to do for our up-down counter is use a single-line control signal to switch between the two counting directions. We have already seen such functionality before. _Where? Which circuit?_
+
+Devices which have control lines the values of which perform an _exclusive_ selection of on output from a set of different inputs, are called _multiplexers_. Multiplexors are, in fact, nothing more than electrical switches. Where as the transistor is an electrical switch that is _either on or off_, multiplexors are _always on but can switch between different outputs_. In a household analogy, the transistor is like an on-off light switch, whereas the multiplexer is your security system which has three different modes: Stay, Away, and Night. _(Of course, you can turn it off completely, but you get the point.)_
+
+The symbol for the simplest multiplexer looks like this:
+```
+                   Selector
+                      |
+                      |
+                |-----------|
+Input 1 --------|           |
+                |           |-------- Output
+Input 2 --------|           |
+                |-----------|
+```
+_(Remember that the signals flow from left to right.)_ This is a called a _2-to-1_ or _1-out-of-2_ multiplexer. When the selector is `0`, `Output = Input 1`; when the selector is `1`, `Output = Input 2`. Answer the following questions:
+1. _How is a multiplexer different from a logic gate?_
+2. _Does a multiplexer have state? Depending on your answer, is a multiplexor a sequential or a combinational circuit?_
+3. Notice that a 1-bit selector can multiplex between 2 inputs. Let's generalize this. _How many control lines would you need for a _4-to-1_ multiplexer? What about for a _8-to-1_ multiplexer? What about for a _5-to-1_ multiplexer? What about for an N-input multiplexor, where N is an exact power of 2? What about for an M-input multiplexor, where M is **not** an exact power of 2?_
+
+Multiplexers are a fundamental element of control ciruits in processors.
+
+##### Multiplexer out of gates
+While a multiplexer is not a logic gate itself, it can be built out of logic gates.
+
+**TODO**
+
 
 #### 2. Apply
 - remove the MSB of the counter to free up a converter channel
