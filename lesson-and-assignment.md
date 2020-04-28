@@ -520,20 +520,34 @@ In the [repository](./), include:
 ### Optional section 7: Bi-directional synchronous circuits (IN PROGRESS)
 
 #### 1. Study
-- pros and cons of synchronous and asynchronous (not just counters)
-  - the processor is a very complex synchronous system
-  - long memory-bound tasks are executed asynchronously
-- timing in ciruits (datasheets, levels of abstraction)
-  - "reactive" article in micro:bit reference
-  - process scheduling
-  - communication protocols
-  - the processor and interrupts
+
+##### Applications of synchronous and asynchronous circuits
+- the processor is a very complex synchronous system
+- long memory-bound tasks are executed asynchronously
+
+##### Timing in electronics and computing
+- datasheets, levels of abstraction)   
+- "reactive" article in micro:bit reference    
+- process scheduling    
+- communication protocols    
+- the processor and interrupts    
+  
+Links:
+  - https://en.wikipedia.org/wiki/Barrel_shifter    
+  - https://en.wikipedia.org/wiki/FO4     
+  - https://en.wikipedia.org/wiki/Logical_effort ([images](https://www.google.com/search?q=logical+effort&sxsrf=ALeKk02q44lmm3uSyYqTSA7UBHEWlIlHrQ:1588106446946&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi0vYrF_YvpAhWWQc0KHYn3DwAQ_AUoAnoECBEQBA&biw=1528&bih=850)    
 
 #### 2. Apply
-- build a 3-bit synchronous up counter
-- build a 2-bit up/down multiplexed synchronous counter
+- build a 3-bit synchronous up counter (no control signal necessary; reset with gates)
+- build a 2-bit up/down multiplexed synchronous counter (up/down control signal necessary; reset with gates)
 - build a 3-bit left/right 8-bit ring-shifter out of 3 D-flip-flops (control with micro:bit)
-  - what is the interface overhead for a barrel shifter? bits and direction --> too much? or a great opportunity to do some UI?
+  - drive 3 LED circuits with the flip-flops
+- (challenge) barrel shifter:
+  - start with an 8 bit pattern
+  - interpet as an 8-bit integer and show in decimal
+  - choose shift number of bits and direction (UI practice)
+  - show the shifted pattern
+  - interpet as an 8-bit integer and show in decimal
 
 #### 3. Present
 - timing diagrams and schematics
