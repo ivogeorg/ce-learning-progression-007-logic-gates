@@ -1,7 +1,7 @@
 # CPE 1040 - Spring 2020
 
 Author: Ivo Georgiev, PhD  
-Last updated: 2020-04-26   
+Last updated: 2020-04-28   
 Code: 9acff7cc344309ac25976869a50535751d4b970d      
 
 ![alt text](images/CPE-Asst6-Modulo-Ctr.jpg "Final circuit for CPE 1040 Asst 6")
@@ -521,12 +521,19 @@ In the [repository](./), include:
 
 #### 1. Study
 - pros and cons of synchronous and asynchronous (not just counters)
+  - the processor is a very complex synchronous system
+  - long memory-bound tasks are executed asynchronously
 - timing in ciruits (datasheets, levels of abstraction)
+  - "reactive" article in micro:bit reference
+  - process scheduling
+  - communication protocols
+  - the processor and interrupts
 
 #### 2. Apply
 - build a 3-bit synchronous up counter
 - build a 2-bit up/down multiplexed synchronous counter
-- build a 3-bit left/right shifter out of 3 D-flip-flops (control?)
+- build a 3-bit left/right 8-bit ring-shifter out of 3 D-flip-flops (control with micro:bit)
+  - what is the interface overhead for a barrel shifter? bits and direction --> too much? or a great opportunity to do some UI?
 
 #### 3. Present
 - timing diagrams and schematics
@@ -540,7 +547,7 @@ In the [repository](./), include:
 - binary numbers and control circuits
 
 #### 2. Apply
-- 3-bit upmod-5 counter (local reset)
+- 3-bit up mod-5 counter (local reset)
 - 3-bit down mod-6 counter (local reset)
 (- 3-bit circuit that cycles through the sequence 0-1-2-3-4-5-4-3-2-1-0-1-2-3-4-5-6-5-4-3-2-1-0-...)
 - if it can't fit, remove one flip-flop chip, and do 0-1-2-**3**-2-1-0-1-**2**-1-0-... (opens up a control signal from micro:bit)
