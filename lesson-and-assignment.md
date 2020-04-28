@@ -15,7 +15,7 @@ Table of Contents
   * [Take\-home lab kit](#take-home-lab-kit)
   * [Learning how to learn](#learning-how-to-learn)   
         * [Learning How to Learn 03](#learning-how-to-learn-03)
-  * [Lesson &amp; Assignment 007: Logic gates (IN PROGRESS)](#lesson--assignment-007-logic-gates-in-progress)
+  * [Lesson &amp; Assignment 007: Logic gates](#lesson--assignment-007-logic-gates)
     * [Section 1: AND, OR, and NOT gates from NPN transistors](#section-1-and-or-and-not-gates-from-npn-transistors)
       * [1\. Study](#1-study)
         * [Logic levels](#logic-levels)
@@ -104,7 +104,7 @@ The human mind is a very fine machine with amazing capabilities. And like any co
    
    TO DO: The worst thing you can do when you read the above paragraph is to conclude that you have the fixed mindset and that's that. The whole point of talking about mindsets is to convince you to try the other, the growth mindset, and realize that it takes no more effort than the other. It's just a matter of decision. Just like you have no problem deciding between orange chicken and mushrooms with greens at a Panda Express, you can choose to withhold any habitual thoughts of personal inadequacy, and all the fear and pain that such thoughts bring along, and just give it a shot: "I don't understand this, but I will give it some time, look at it from different angles, ask others to see how they think about it, and reassess later". At every moment when you are faced with something new - which in college happens regularly - stay conscious about how you react at the first encounter: are you calm and keep your mind free of extraneous emotions, so you can start thinking about the new thing; or do you try to distance yourself from it and hope it will pass you by? The former is the fixed mindset. The latter is the growth mindset. It's your choice, really.
 
-## Lesson & Assignment 007: Logic gates (IN PROGRESS)
+## Lesson & Assignment 007: Logic gates
 
 This is a lesson and assignment on _logic gates_. Logic gates are circuits which apply logical functions on their inputs and output the result. Logic gates can have 1 or more inputs but usually have only 1 output. They are the building blocks of modern computational hardware, including arithmetic, logic, and control circuits. The logic gates themselves are built out of transistors.
 
