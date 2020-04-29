@@ -51,15 +51,15 @@ Table of Contents
         * [Truth table as functional definition of an arbitrary combinational circuit](#truth-table-as-functional-definition-of-an-arbitrary-combinational-circuit)
       * [2\. Apply](#2-apply-4)
       * [3\. Present](#3-present-4)
-    * [Optional section 6: Bi\-directional binary ripple counter (asynchronous)](#optional-section-6-bi-directional-binary-ripple-counter-asynchronous)
+    * [Section 6: Bi\-directional binary ripple counter (asynchronous)](#section-6-bi-directional-binary-ripple-counter-asynchronous)
       * [1\. Study](#1-study-5)
       * [2\. Apply](#2-apply-5)
       * [3\. Present](#3-present-5)
-    * [Optional section 7: Bi\-directional synchronous circuits (IN PROGRESS)](#optional-section-7-bi-directional-synchronous-circuits-in-progress)
+    * [Section 7: Bi\-directional synchronous circuits (IN PROGRESS)](#section-7-bi-directional-synchronous-circuits-in-progress)
       * [1\. Study](#1-study-6)
       * [2\. Apply](#2-apply-6)
       * [3\. Present](#3-present-6)
-    * [Optional section 8: Synchronous modulo counters (IN PROGRESS)](#optional-section-8-synchronous-modulo-counters-in-progress)
+    * [Section 8: Synchronous modulo counters (IN PROGRESS)](#section-8-synchronous-modulo-counters-in-progress)
       * [1\. Study](#1-study-7)
       * [2\. Apply](#2-apply-7)
       * [3\. Present](#3-present-7)
@@ -454,7 +454,7 @@ In the [repository](./), include:
 1. File `microbit-program-5-2-6.js` with the code you used in task 5.2.6.
 2. File `microbit-program-5-2-7.js` with the code you used in task 5.2.7.
 
-### Optional section 6: Bi-directional binary ripple counter (asynchronous)
+### Section 6: Bi-directional binary ripple counter (asynchronous)
 
 #### 1. Study
 
@@ -517,7 +517,7 @@ In the [Lab Notebook](README.md), include:
 In the [repository](./), include:
 1. File `microbit-program-6-2-3.js` with the code you used in task 6.2.3.
 
-### Optional section 7: Bi-directional synchronous circuits (IN PROGRESS)
+### Section 7: Bi-directional synchronous circuits (IN PROGRESS)
 
 #### 1. Study
 
@@ -535,8 +535,8 @@ In the [repository](./), include:
 ##### The delay in the micro:bit driven ripple counter
 - the delay in the micro:bit which limits the frequency of the CLK signal  
 - comparison of two implementations  
-  - w/ `onPulsed` on every change (asynchronous via _interrupt_)  
-    - `onPulsed` triggers on level change and argument is the new (i.e. "to") level (verify)
+  - w/ [`onPulsed`](https://makecode.microbit.org/reference/pins/on-pulsed) on every change (asynchronous via _interrupt_)  
+    - `onPulsed` triggers on level change and 2nd argument is the final level (verify in software stack)
   - w/o (synchronous via _polling_)  
   
 Links:
@@ -563,7 +563,7 @@ Links:
 - programs
 - videos
 
-### Optional section 8: Synchronous modulo counters (IN PROGRESS)
+### Section 8: Synchronous modulo counters (IN PROGRESS)
 
 #### 1. Study
 - encoding and decoding
