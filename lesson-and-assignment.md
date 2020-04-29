@@ -527,10 +527,17 @@ In the [repository](./), include:
 
 ##### Timing in electronics and computing
 - datasheets, levels of abstraction)   
-- "reactive" article in micro:bit reference    
-- process scheduling    
+- [The micro:bit - a reactive system](https://makecode.microbit.org/device/reactive) article in micro:bit reference    
+- process scheduling (fibers, interrupts, events, scheduling)    
 - communication protocols    
-- the processor and interrupts    
+- the processor and interrupts  
+
+##### The delay in the micro:bit driven ripple counter
+- the delay in the micro:bit which limits the frequency of the CLK signal  
+- comparison of two implementations  
+  - w/ `onPulsed` on every change (asynchronous via _interrupt_)  
+    - `onPulsed` triggers on level change and argument is the new (i.e. "to") level (verify)
+  - w/o (synchronous via _polling_)  
   
 Links:
   - https://en.wikipedia.org/wiki/Barrel_shifter    
@@ -539,6 +546,7 @@ Links:
 
 #### 2. Apply
 - build a 3-bit synchronous up counter (no control signal necessary; reset with gates)
+  - compare frequency range of CLK signal to asynchronous counter
 - build a 2-bit up/down multiplexed synchronous counter (up/down control signal necessary; reset with gates)
 - build a 3-bit left/right 8-bit ring-shifter out of 3 D-flip-flops (control with micro:bit)
   - drive 3 LED circuits with the flip-flops
