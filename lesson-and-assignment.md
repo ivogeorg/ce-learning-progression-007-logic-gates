@@ -542,6 +542,7 @@ Links:
 - build a 2-bit up/down multiplexed synchronous counter (up/down control signal necessary; reset with gates)
 - build a 3-bit left/right 8-bit ring-shifter out of 3 D-flip-flops (control with micro:bit)
   - drive 3 LED circuits with the flip-flops
+- (challenge) 28-bit shifter (5 rows of 5 LEDs + 3 external D flip-flps)
 - (challenge) barrel shifter:
   - start with an 8 bit pattern
   - interpet as an 8-bit integer and show in decimal
