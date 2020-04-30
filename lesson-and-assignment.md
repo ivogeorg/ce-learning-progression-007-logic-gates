@@ -1,7 +1,7 @@
 # CPE 1040 - Spring 2020
 
 Author: Ivo Georgiev, PhD  
-Last updated: 2020-04-25   
+Last updated: 2020-04-28   
 Code: 9acff7cc344309ac25976869a50535751d4b970d      
 
 ![alt text](images/CPE-Asst6-Modulo-Ctr.jpg "Final circuit for CPE 1040 Asst 6")
@@ -13,9 +13,9 @@ Table of Contents
 
 * [CPE 1040 \- Spring 2020](#cpe-1040---spring-2020)
   * [Take\-home lab kit](#take-home-lab-kit)
-  * [Learning how to learn](#learning-how-to-learn)
+  * [Learning how to learn](#learning-how-to-learn)   
         * [Learning How to Learn 03](#learning-how-to-learn-03)
-  * [Lesson &amp; Assignment 007: Logic gates (IN PROGRESS)](#lesson--assignment-007-logic-gates-in-progress)
+  * [Lesson &amp; Assignment 007: Logic gates](#lesson--assignment-007-logic-gates)
     * [Section 1: AND, OR, and NOT gates from NPN transistors](#section-1-and-or-and-not-gates-from-npn-transistors)
       * [1\. Study](#1-study)
         * [Logic levels](#logic-levels)
@@ -51,15 +51,15 @@ Table of Contents
         * [Truth table as functional definition of an arbitrary combinational circuit](#truth-table-as-functional-definition-of-an-arbitrary-combinational-circuit)
       * [2\. Apply](#2-apply-4)
       * [3\. Present](#3-present-4)
-    * [Optional section 6: Bi\-directional 3\-bit binary ripple counter (asynchronous) (IN PROGRESS)](#optional-section-6-bi-directional-3-bit-binary-ripple-counter-asynchronous-in-progress)
+    * [Section 6: Bi\-directional binary ripple counter (asynchronous)](#section-6-bi-directional-binary-ripple-counter-asynchronous)
       * [1\. Study](#1-study-5)
       * [2\. Apply](#2-apply-5)
       * [3\. Present](#3-present-5)
-    * [Optional section 7: Bi\-directional synchronous circuits (IN PROGRESS)](#optional-section-7-bi-directional-synchronous-circuits-in-progress)
+    * [Section 7: Bi\-directional synchronous circuits (IN PROGRESS)](#section-7-bi-directional-synchronous-circuits-in-progress)
       * [1\. Study](#1-study-6)
       * [2\. Apply](#2-apply-6)
       * [3\. Present](#3-present-6)
-    * [Optional section 8: Synchronous modulo counters (IN PROGRESS)](#optional-section-8-synchronous-modulo-counters-in-progress)
+    * [Section 8: Synchronous modulo counters (IN PROGRESS)](#section-8-synchronous-modulo-counters-in-progress)
       * [1\. Study](#1-study-7)
       * [2\. Apply](#2-apply-7)
       * [3\. Present](#3-present-7)
@@ -104,7 +104,7 @@ The human mind is a very fine machine with amazing capabilities. And like any co
    
    TO DO: The worst thing you can do when you read the above paragraph is to conclude that you have the fixed mindset and that's that. The whole point of talking about mindsets is to convince you to try the other, the growth mindset, and realize that it takes no more effort than the other. It's just a matter of decision. Just like you have no problem deciding between orange chicken and mushrooms with greens at a Panda Express, you can choose to withhold any habitual thoughts of personal inadequacy, and all the fear and pain that such thoughts bring along, and just give it a shot: "I don't understand this, but I will give it some time, look at it from different angles, ask others to see how they think about it, and reassess later". At every moment when you are faced with something new - which in college happens regularly - stay conscious about how you react at the first encounter: are you calm and keep your mind free of extraneous emotions, so you can start thinking about the new thing; or do you try to distance yourself from it and hope it will pass you by? The former is the fixed mindset. The latter is the growth mindset. It's your choice, really.
 
-## Lesson & Assignment 007: Logic gates (IN PROGRESS)
+## Lesson & Assignment 007: Logic gates
 
 This is a lesson and assignment on _logic gates_. Logic gates are circuits which apply logical functions on their inputs and output the result. Logic gates can have 1 or more inputs but usually have only 1 output. They are the building blocks of modern computational hardware, including arithmetic, logic, and control circuits. The logic gates themselves are built out of transistors.
 
@@ -367,7 +367,7 @@ In the [repository](./), include:
 Logic gates do not have to have only 2 inputs. While multi-input gates are rarer than the canonical 2-input ones, there are uses in [multi-bit computational components](https://en.wikipedia.org/wiki/List_of_7400-series_integrated_circuits) for which they are perfect. 
 
 For example, let's look at the datasheet for an [8-input NAND gate](http://www.ti.com/lit/ds/symlink/sn74ls30.pdf?ts=1587846989650). Things to notice:
-1. The truth table is non-exhaustive, instead providing an abstract description of the function.
+1. The truth table is non-exhaustive, instead providing an abstract analytical description of the function.
 
 | Inputs A through H | Output Y |
 :---: | :---:
@@ -404,7 +404,7 @@ The output values are determined by the rules of _addition_ in binary. For examp
 3. Row 5, for which the input expression (aka _minterm_) is <img src="https://render.githubusercontent.com/render/math?math=A\bar{B}\bar{C}">
 4. Row 8, for which the input expression (aka _minterm_) is <img src="https://render.githubusercontent.com/render/math?math=ABC">
 
-We can read this as "S is high when the input is either like row 2 **OR** like row 3 **OR** ...". This gives us the following Boolean expression for S:
+We can read this as: _S is high when the input is either like row 2 **OR** like row 3 **OR** ..._. This gives us the following Boolean expression for S:
 
 <img src="https://render.githubusercontent.com/render/math?math=S = \bar{A}\bar{B}C %2b \bar{A}B\bar{C} %2b A\bar{B}\bar{C} %2b ABC">
 
@@ -421,7 +421,7 @@ We follow a similar procedure for the other output C<sub>OUT</sub>.
 #### 2. Apply
 1. Show the truth/functional table of an 8-input NOR gate, in two ways:
    1. Exhaustively, with all rows and columns.
-   2. Abstractly, with 2 columns and 3 rows.
+   2. Abstractly/analytically, with 2 columns and 3 rows.
 2. Show the truth/functional table of a 8-input XOR gate, in two ways:
    1. Exhaustively, with all rows and columns.
    2. Abstractly, with 2 columns and 3 rows.
@@ -441,8 +441,8 @@ We follow a similar procedure for the other output C<sub>OUT</sub>.
    10. Build a combinational circuit for a NOR gate and analyze it.
    11. Build a combinational circuit for which there is _no name_ and scroll `"No name"` on the analyzer. _Hint: Take a look at the preceiding task which asked you to list and identify all 4-bit output patterns for 2-input gates._
 7. Use the 4-th converter line to drive the multiplexor of the XOR/XNOR gate and analyze it, displaying the functions side by side and columns 3 and 4 of the LED matrix.
-8. **CHALLENGE** For the _no-name_ functions, scroll the equivalent Boolean algebra output expression.
-9. **CHALLENGE** Expand the logic analyzer to 3-input gates (or combinational circuits).
+8. **CHALLENGE** For the _no-name_ functions, scroll the equivalent Boolean algebra output expression. _Guide: If you lay out the outputs of the function horizontally as a bit pattern (e.g. 0001 for AND), you can interpret it as a 4-bit binary number. Why are they all unique? Having a unique number for each item automoatically gives you an **index**. You can use this index in the data structure you will use to hold the logic gate names. For the logic functions without names, the "output bit pattern" can be used to generate the **minterm expression**, by picking the minterms that correspond to 1s. In fact, this can be done for all 2-input logical functions whether or not they have canonical gate names._
+9. **CHALLENGE** Expand the logic analyzer to 3-input gates (and combinational circuits).
 
 #### 3. Present
 In the [Lab Notebook](README.md), include:
@@ -454,49 +454,123 @@ In the [repository](./), include:
 1. File `microbit-program-5-2-6.js` with the code you used in task 5.2.6.
 2. File `microbit-program-5-2-7.js` with the code you used in task 5.2.7.
 
-### Optional section 6: Bi-directional 3-bit binary ripple counter (asynchronous) (IN PROGRESS)
+### Section 6: Bi-directional binary ripple counter (asynchronous)
 
 #### 1. Study
-- synchronous vs asynchronous
-- ripple & delays
-- down schematic, up schematic, derive control
-- multiplexers are a major element of combinational control ciruits
-- different ways to build a multiplexer
+
+##### Synchronous vs asynchronous systems
+One of the primary design considerations in computer systems and components is whether the system or subsystem is _synchronous_ or _asynchrounous_. Synchrounous means _in step_, _in time_, _at the same time_, but can also mean _at a predictable and/or regular time(s)_. Synchronous systems are usually _centrally timed_ (e.g. by a clock signal) and conform to the timing sygnal. Asynchronous systems, on the other hand, are not centrally timed and execute _as soon as possible_ without waiting for other events or components to sync with. The synchronous-vs-asynchronous topic in computer systems is vast and appears at many levels and in many different design problems. Our introductory intuition-building example is our 3-bit counter, which can be built as both an asynchrounous system and a synchronous system. We built the asynchronous version in the previous assignment. In this section, we'll extend it, and in the subsequent sections we will build the synchronous version as well as other synchronous circuits.
+
+##### Ripple & propagation delay
+Our asychronous counter is also called a _ripple_ counter. What makes it asynchronous is that the clock signal only drives the flip-flop for the least-significant bit _b<sub>0</sub>_, whereas _b<sub>1</sub>_ and _b<sub>2</sub>_ receive their "clock" signal from one of the outputs of the preceding flip-flop. As each flip-flop _divides_ the frequency of the preceding flip-flop _(How and why does it do that?)_, there is no single central clock signal that drives the whole system. Thus, the flip-flops of the counter are driven _asynchrounously_.
+
+Recall that logic gates have a _delay_ between the input and output, which we called a _propagation delay_. It's the time the signal takes to propagate through the circuit from input to output. Our flip-flops also have delays, in fact larger ones than the logic gates, because flip-flops are _stateful_ devices and need to _switch_ between one stable state (say, 0) to the other (in this case, 1). Switching always adds extra delays. For example, compare the _switching charecteristics_ section of the [74LS08 AND gate](http://www.ti.com/lit/ds/symlink/sn74ls08.pdf?ts=1587949352102) (12-19 ns) and the [74LS74 D-type flip-flop](http://www.ti.com/lit/ds/symlink/sn74ls74a.pdf?ts=1587949244609) (20-40 ns).
+
+Because our counter is asynchronous, the driving signal, which starts from the clock input for the _b<sub>0</sub>_ flip-flop, incurs an extra flip-flop delay with each flip-flop it propagates through. This is the [_ripple_](https://www.electronicshub.org/asynchronous-counter/#What_is_clock_ripple) effect that gives our counter its alternative name. In our counter, in comparison to a synchrounous counter, where all flip-flops receive the same CLK signal, the changes in the bits also exhibit the ripple, where in a synchronous counter the bits will all change _at the same time_.
+
+##### Down counter & up counter
+The counter we built in the previous assignment is a _down_ counter. It counts from its highest value down to 0, indefinitely while there is a driving clock signal. To make it count _up_, we need only to change the wiring of a single ripple signal. Read this detailed exploration of [ripple counters](https://www.electronicshub.org/asynchronous-counter/) and answer the following questions: 
+1. _What differences between the down-counter and up-counter circuits can you spot?_
+2. _Why does the down-counter count down while the up-counnter count up? Draw the timing diagram of the two circuits and reason why/how each cicuit produces its diagram._
+3. _Based on your analysis, if we want to have a switchable up-down counter in one circuit, what should do?_
+
+##### Multiplexers
+What we need to do for our up-down counter is use a single-line control signal to switch between the two counting directions. We have already seen such functionality before. _Where? Which circuit?_
+
+Devices which have control lines the values of which perform an _exclusive_ selection of on output from a set of different inputs, are called [_multiplexers_](https://www.electronics-tutorials.ws/combination/comb_2.html). Multiplexors are, in fact, nothing more than electrical switches. Where as the transistor is an electrical switch that is _either on or off_, multiplexors are _always on but can switch between different outputs_. In a household analogy, the transistor is like an on-off light switch, whereas the multiplexer is your security system which has three different modes: Stay, Away, and Night. _(Of course, you can turn it off completely, but you get the point.)_
+
+The symbol for the simplest multiplexer looks like this:
+```
+        Selector ------
+                      |
+                      |
+                |-----------|
+Input 1 --------|           |
+                |           |-------- Output
+Input 2 --------|           |
+                |-----------|
+```
+_(Remember that the signals flow from left to right.)_ This is a called a _2-to-1_ or _1-out-of-2_ multiplexer. When the selector is `0`, `Output = Input 1`; when the selector is `1`, `Output = Input 2`. Answer the following questions:
+1. _How is a multiplexer different from a logic gate?_
+2. _Does a multiplexer have state? Depending on your answer, is a multiplexor a sequential or a combinational circuit?_
+3. Notice that a 1-bit selector can multiplex between 2 inputs. Let's generalize this. _How many control lines would you need for a _4-to-1_ multiplexer? What about for a _8-to-1_ multiplexer? What about for a _5-to-1_ multiplexer? What about for an N-input multiplexor, where N is an exact power of 2? What about for an M-input multiplexor, where M is **not** an exact power of 2?_
+
+Multiplexers are a fundamental element of _control_ ciruits in [processors](https://en.wikipedia.org/wiki/Computer_architecture) and _[bus](https://en.wikipedia.org/wiki/Bus_(computing))_ switch hubs, among others.
+
+##### Multiplexer out of logic gates
+While a multiplexer is not a logic gate itself, it can be built out of logic gates. Here are two different implementations:
+1. [4 NAND gates](https://www.electronics-tutorials.ws/combination/comb_2.html)   
+2. [2 AND, 1 OR, and 1 NOT gates](https://learn.sparkfun.com/tutorials/logicblocks-experiment-guide/all#7-2-to-1-multiplexer)   
+
+While they are functionally equivalent, from the perspective of circuit real estate, the first one is more efficient than the second (1 IC vs 3 ICs). _Write the Boolean expressions for both circuits and show that they are equivalent._
 
 #### 2. Apply
-- remove the MSB of the counter to free a converter channel
-- built a multiplexer from gates
-- drive the selector from the micro:bit
+1. We only have 4 voltage converter channels, so to add a control line, we need to open up a channel. Remove the MSB of the 3-bit counter. A 2-bit counter will be sufficient to demonstrate our up-down counter.
+2. Build a multiplexer out of logic gates.
+3. Modify your previous counter program to drive the selector from a digital output pin on the micro:bit by toggling a button. _Test the circuit. Does it switch its direction?_
 
 #### 3. Present
-- design writeup, including truth table
-- program source
-- video
+In the [Lab Notebook](README.md), include:
+1. A short narrative about the experiments, including answers to all the questions in 6.1 and 6.2.3, as well as any relevant discussion. 
+2. A short videos of the operating circuit from 6.2.3.
 
-### Optional section 7: Bi-directional synchronous circuits (IN PROGRESS)
+In the [repository](./), include:
+1. File `microbit-program-6-2-3.js` with the code you used in task 6.2.3.
+
+### Section 7: Bi-directional synchronous circuits (IN PROGRESS)
 
 #### 1. Study
-- pros and cons of synchronous and asynchronous (not just counters)
-- timing in ciruits (datasheets, levels of abstraction)
+
+##### Applications of synchronous and asynchronous circuits
+- the processor is a very complex synchronous system
+- long memory-bound tasks are executed asynchronously
+
+##### Timing in electronics and computing
+- datasheets, levels of abstraction)   
+- [The micro:bit - a reactive system](https://makecode.microbit.org/device/reactive) article in micro:bit reference    
+- process scheduling (fibers, interrupts, events, scheduling)    
+- communication protocols    
+- the processor and interrupts  
+
+##### The delay in the micro:bit driven ripple counter
+- the delay in the micro:bit which limits the frequency of the CLK signal  
+- comparison of two implementations  
+  - w/ [`onPulsed`](https://makecode.microbit.org/reference/pins/on-pulsed) on every change (asynchronous via _interrupt_)  
+    - `onPulsed` triggers on level change and 2nd argument is the final level (verify in software stack)
+  - w/o (synchronous via _polling_)  
+  
+Links:
+  - https://en.wikipedia.org/wiki/Barrel_shifter    
+  - https://en.wikipedia.org/wiki/FO4     
+  - https://en.wikipedia.org/wiki/Logical_effort ([images](https://www.google.com/search?q=logical+effort&sxsrf=ALeKk02q44lmm3uSyYqTSA7UBHEWlIlHrQ:1588106446946&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi0vYrF_YvpAhWWQc0KHYn3DwAQ_AUoAnoECBEQBA&biw=1528&bih=850)    
 
 #### 2. Apply
-- build a 3-bit synchronous up counter
-- build a 2-bit up/down multiplexed synchronous counter
-- build a 3-bit left/right shifter out of 3 D-flip-flops (control?)
+- build a 3-bit synchronous up counter (no control signal necessary; reset with gates)
+  - compare frequency range of CLK signal to asynchronous counter
+- build a 2-bit up/down multiplexed synchronous counter (up/down control signal necessary; reset with gates)
+- build a 3-bit left/right 8-bit ring-shifter out of 3 D-flip-flops (control with micro:bit)
+  - drive 3 LED circuits with the flip-flops
+- (challenge) 28-bit shifter (5 rows of 5 LEDs + 3 external D flip-flps)
+- (challenge) barrel shifter:
+  - start with an 8 bit pattern
+  - interpet as an 8-bit integer and show in decimal
+  - choose shift number of bits and direction (UI practice)
+  - show the shifted pattern
+  - interpet as an 8-bit integer and show in decimal
 
 #### 3. Present
 - timing diagrams and schematics
 - programs
 - videos
 
-### Optional section 8: Synchronous modulo counters (IN PROGRESS)
+### Section 8: Synchronous modulo counters (IN PROGRESS)
 
 #### 1. Study
 - encoding and decoding
 - binary numbers and control circuits
 
 #### 2. Apply
-- 3-bit upmod-5 counter (local reset)
+- 3-bit up mod-5 counter (local reset)
 - 3-bit down mod-6 counter (local reset)
 (- 3-bit circuit that cycles through the sequence 0-1-2-3-4-5-4-3-2-1-0-1-2-3-4-5-6-5-4-3-2-1-0-...)
 - if it can't fit, remove one flip-flop chip, and do 0-1-2-**3**-2-1-0-1-**2**-1-0-... (opens up a control signal from micro:bit)
