@@ -505,6 +505,9 @@ While a multiplexer is not a logic gate itself, it can be built out of logic gat
 While they are functionally equivalent, from the perspective of circuit real estate, the first one is more efficient than the second (1 IC vs 3 ICs). _Write the Boolean expressions for both circuits and show that they are equivalent._
 
 #### 2. Apply
+
+This [video](https://imgur.com/gallery/lutZIRp) demonstrates the functionality of the circuit you will build in this section.
+
 1. We only have 4 voltage converter channels, so to add a control line, we need to open up a channel. Remove the MSB of the 3-bit counter. A 2-bit counter will be sufficient to demonstrate our up-down counter.
 2. Build a multiplexer out of logic gates.
 3. Modify your previous counter program to drive the selector from a digital output pin on the micro:bit by toggling a button. _Test the circuit. Does it switch its direction?_
