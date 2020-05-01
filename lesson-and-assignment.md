@@ -4,7 +4,7 @@ Author: Ivo Georgiev, PhD
 Last updated: 2020-04-28   
 Code: 9acff7cc344309ac25976869a50535751d4b970d      
 
-![alt text](images/CPE-Asst6-Modulo-Ctr.jpg "Final circuit for CPE 1040 Asst 6")
+![alt text](images/2-bit-up-down-ripple-ctr.jpg "2-bit up/down ripple counter")
 
 This is lesson and assignment 007 for the Spring 2020 installment of the CPE 1040 - Intro to Computer Engineering course at MSU Denver.
 
