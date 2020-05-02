@@ -535,8 +535,8 @@ In the [repository](./), include:
 - communication protocols    
 - the processor and interrupts  
 
-##### The delay in the micro:bit driven ripple counter
-- the delay in the micro:bit which limits the frequency of the CLK signal  
+##### The latency of the micro:bit-driven ripple counter
+- the delays in the micro:bit which limit the frequency of the CLK signal  
 - comparison of two implementations  
   - w/ [`onPulsed`](https://makecode.microbit.org/reference/pins/on-pulsed) on every change (asynchronous via _interrupt_)  
     - `onPulsed` triggers on level change and 2nd argument is the final level (verify in software stack)
