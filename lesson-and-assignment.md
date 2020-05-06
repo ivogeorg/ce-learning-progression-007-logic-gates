@@ -529,7 +529,8 @@ In the [repository](./), include:
 - long memory-bound tasks are executed asynchronously
 
 ##### Timing in electronics and computing
-- datasheets, levels of abstraction)   
+- datasheets (rises, debouncing, delays, etc.)
+- levels of abstraction (from circuit level inter-signal timing to RTOS)  
 - [The micro:bit - a reactive system](https://makecode.microbit.org/device/reactive) article in micro:bit reference    
 - process scheduling (fibers, interrupts, events, scheduling)    
 - communication protocols    
@@ -548,11 +549,13 @@ Links:
   - https://en.wikipedia.org/wiki/Logical_effort ([images](https://www.google.com/search?q=logical+effort&sxsrf=ALeKk02q44lmm3uSyYqTSA7UBHEWlIlHrQ:1588106446946&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi0vYrF_YvpAhWWQc0KHYn3DwAQ_AUoAnoECBEQBA&biw=1528&bih=850)    
 
 #### 2. Apply
-- build a 3-bit synchronous up counter (no control signal necessary; reset with gates)
+- build a 3-bit synchronous up counter (no control signal from micro:bit necessary; combinational logic with gates)
   - compare frequency range of CLK signal to asynchronous counter
-- build a 2-bit up/down multiplexed synchronous counter (up/down control signal necessary; reset with gates)
+- build a 2-bit up/down multiplexed synchronous counter (up/down control signal necessary; combinational logic with gates)
 - build a 3-bit left/right 8-bit ring-shifter out of 3 D-flip-flops (control with micro:bit)
   - drive 3 LED circuits with the flip-flops
+  - only one bit of input, but it needs to be multiplexed
+  - _there might not be enough room for this :(_
 - (challenge) 28-bit shifter (5 rows of 5 LEDs + 3 external D flip-flps)
 - (challenge) barrel shifter:
   - start with an 8 bit pattern
