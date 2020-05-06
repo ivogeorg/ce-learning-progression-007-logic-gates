@@ -526,6 +526,7 @@ In the [repository](./), include:
 
 ##### Applications of synchronous and asynchronous circuits
 - the processor is a very complex synchronous system
+  - instructions and pipeline stages
 - long memory-bound tasks are executed asynchronously
 
 ##### Timing in electronics and computing
