@@ -525,9 +525,15 @@ In the [repository](./), include:
 #### 1. Study
 
 ##### Applications of synchronous and asynchronous circuits
-- the processor is a very complex synchronous system
-  - instructions and pipeline stages
-- long memory-bound tasks are executed asynchronously
+###### Synchronous circuits in processors
+The most important application of _synchronous_ circuits in computing is in the complex _sequential_ circuits of _processors_. Unlike the simple two-state flip-flop, processors have a large number of states and a very complex set of transitions among them. The abstract model for a [_finite state machine_](https://en.wikipedia.org/wiki/Finite-state_machine) is used as the fundamental framework for [processor design](http://www-inst.eecs.berkeley.edu/~cs150/fa05/CLD_Supplement/chapter11/chapter11.doc3.html).
+
+An important component of every processor is the _clock generator_, which generates the _master clock signal_ for the whole system and a cascade of derivative signals to synchronize various processor components as well as peripherals which need to interface with them. At the heart of every processor is the [_central processing unit_](https://en.wikipedia.org/wiki/Central_processing_unit), which, driven by the master clock in lock step with the other processor components, executes a sequence of [_machine instructions_](https://en.wikipedia.org/wiki/Instruction_set_architecture#Instructions). The execution of these instructions is really what _computing_ is all about.
+
+Despite the complexity of the processor, it can be [built from the ground up entirely from logic gates](https://www.springer.com/gp/book/9783319139050).
+
+###### Asychronous circuits in peripherals
+Asynchronous circuits, on the other hand, find their most widespread use in integrating _peripheral devices_ with the processor. Peripheral devices are components of computers which are not direcly responsible for the execution of computational instructions, but instead with _exchanging data_ (aka _input-output (I/O)_) with the outside and _memory management_, among others. These devices most often interface with the processor external _asynchronous_ events, the occurrence of which is unpredictable with respect to the sequence of states of the processor. These interfaces do not rely on the processor clock but instead use _interrupt signals_ that the processor can both detect and generate.
 
 ##### Timing in electronics and computing
 - datasheets (rises, debouncing, delays, etc.)
