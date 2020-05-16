@@ -1,7 +1,7 @@
 # CPE 1040 - Spring 2020
 
 Author: Ivo Georgiev, PhD  
-Last updated: 2020-04-28   
+Last updated: 2020-05-16   
 Code: 9acff7cc344309ac25976869a50535751d4b970d      
 
 ![alt text](images/2-bit-up-down-ripple-ctr.jpg "2-bit up/down ripple counter")
@@ -536,6 +536,10 @@ Despite the complexity of the processor, it can be [built from the ground up ent
 Asynchronous circuits, on the other hand, find their most widespread use in integrating _peripheral devices_ with the processor. Peripheral devices are components of computers which are not direcly responsible for the execution of computational instructions, but instead with _exchanging data_ (aka _input-output (I/O)_) between the processor and the outside, and _memory management_, among others. These devices most often serve as an interface with the processor for external _asynchronous_ events, the occurrence of which is unpredictable with respect to the sequence of states of the processor. These interfaces do not rely on the processor clock but instead use [_interrupt signals_](https://en.wikipedia.org/wiki/Interrupt) that the processor can both detect and generate.
 
 In general, if a circuit does not have to be synchronous, it is asynchronous, as the latter are simpler and cheaper to produce. Thus, there is a large variety of applications for asynchronous circuits, for example in [communications](http://async.org.uk/tech-reports/NCL-EECE-MSD-TR-2003-100.pdf), and [robotics](https://www.pnas.org/content/116/16/7750).
+
+**TODO** Interrupts and events in the micro:bit!
+
+Peripheral (e.g. button, accelerometer) -> Nordic SOC sdk/hdk interrupts --> micro:bit DAL events --> micro:bit DAL top-level interface (toward language runtime) --> programmatic handling
 
 ##### Timing in electronics and computing
 - datasheets (rises, debouncing, delays, etc.)
