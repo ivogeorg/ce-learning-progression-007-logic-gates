@@ -537,9 +537,18 @@ Asynchronous circuits, on the other hand, find their most widespread use in inte
 
 In general, if a circuit does not have to be synchronous, it is asynchronous, as the latter are simpler and cheaper to produce. Thus, there is a large variety of applications for asynchronous circuits, for example in [communications](http://async.org.uk/tech-reports/NCL-EECE-MSD-TR-2003-100.pdf), and [robotics](https://www.pnas.org/content/116/16/7750).
 
+###### First glance at the micro:bit full stack
+
 **TODO** Interrupts and events in the micro:bit!
 
-Peripheral (e.g. button, accelerometer) -> Nordic SOC sdk/hdk interrupts --> micro:bit DAL events --> micro:bit DAL top-level interface (toward language runtime) --> programmatic handling
+  1. Peripheral physical device (e.g. button, accelerometer) -->   
+  2. Nordic SOC routing + interrupt signals -->   
+  3. Nordic sdk/hdk interrupt handling -->   
+  4. mbed-classic OS -->   
+  5. micro:bit DAL debouncing + events -->   
+  6. micro:bit DAL top-level interface (toward language runtime) -->    
+  7. programmatic hooks (pxt-microbit + TF runtime + event handler setters) -->   
+  8. scheduler (reactive article + synchronous & asynchronous code in the TF program)   
 
 ##### Timing in electronics and computing
 - datasheets (rises, debouncing, delays, etc.)
