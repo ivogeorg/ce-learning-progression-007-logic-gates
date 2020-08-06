@@ -13,8 +13,6 @@ Table of Contents
 
 * [CPE 1040 \- Spring 2020](#cpe-1040---spring-2020)
   * [Take\-home lab kit](#take-home-lab-kit)
-  * [Learning how to learn](#learning-how-to-learn)   
-        * [Learning How to Learn 03](#learning-how-to-learn-03)
   * [Lesson &amp; Assignment 007: Logic gates](#lesson--assignment-007-logic-gates)
     * [Section 1: AND, OR, and NOT gates from NPN transistors](#section-1-and-or-and-not-gates-from-npn-transistors)
       * [1\. Study](#1-study)
@@ -87,22 +85,6 @@ Table of Contents
 ## Take-home lab kit
 
 The take-home lab kit is meant to provide continuity of our lab projects across the transition to online instruction. Please, read the [BOM, guide, and care document](https://docs.google.com/document/d/18IDsrQlZY_QkmWG7FFtGqd9M2S1wL8ShJrD00aHwBwQ/edit?usp=sharing) and use it as a reference throughout the lesson and assignment.
-
-## Learning how to learn
-
-The human mind is a very fine machine with amazing capabilities. And like any complex mechanism, it takes study to learn to use it effectively. This standalone section will contain practical information and advice for learning how to learn.
-
-##### Learning How to Learn 03
-
-1. The two-minute principle.    
-   The _two-minute principle_ is an extremely easy and useful technique that requires no setup and no special circumstances. How often have you felt _stuck_ in indecision about how to proceed or even how to start, say, a piece of work, a homework, an exam review, or any other thing that you know you have to do but you feel reluctant to start or continue? And how often, for one reason or another, you have been startled out of this frozen state, only to find that you have seamlessly slid into the activity without noticing, and that all resistance has disappeared? In a way, you only had to start, to get yourself into a productive state of _flow_ instead?   
-   
-   TO DO: The two-minute principle is the simplest technique to do this at will. And that's all it is: one way or another you focus on what you have to do _for 2 minutes_ before you look up and reassess; more often than not, relieved of the pressure of having to _slog through_ "all this work that has piled up", it has jumped into the limited task at hand and bit into it. Chances are that in 2 minutes you will be in a completely different state of mind, able to tick tasks off without any negative emotions, but even with _excitement for every completed piece of work_.    
-   
-2. Mindset: fixed vs growth.    
-   The term _mindset_ refers to the usual way you react to mental challenges. If you can't do something successfully, do you get frustrated and give up, or do you get frustrated and keep banging at it and try new things? A lot of research literature has accumulated that shows that the difference in our reactions to percieved adversity and our reflexive attribution of the difficulties to either _intrinsic ineptitude_ or _not enough training yet_ divide us into two fundamentally different behavioral groups. The former attribution is associated with the so called _fixed mindset_ and the latter with the so called _growth mindset_.
-   
-   TO DO: The worst thing you can do when you read the above paragraph is to conclude that you have the fixed mindset and that's that. The whole point of talking about mindsets is to convince you to try the other, the growth mindset, and realize that it takes no more effort than the other. It's just a matter of decision. Just like you have no problem deciding between orange chicken and mushrooms with greens at a Panda Express, you can choose to withhold any habitual thoughts of personal inadequacy, and all the fear and pain that such thoughts bring along, and just give it a shot: "I don't understand this, but I will give it some time, look at it from different angles, ask others to see how they think about it, and reassess later". At every moment when you are faced with something new - which in college happens regularly - stay conscious about how you react at the first encounter: are you calm and keep your mind free of extraneous emotions, so you can start thinking about the new thing; or do you try to distance yourself from it and hope it will pass you by? The former is the fixed mindset. The latter is the growth mindset. It's your choice, really.
 
 ## Lesson & Assignment 007: Logic gates
 
